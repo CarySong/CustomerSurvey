@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.5.0)
+  - HandyJSON (1.7.2)
+  - MBProgressHUD (1.0.0)
+  - SnapKit (3.2.0)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4)
+  - HandyJSON (~> 1.7.2)
+  - MBProgressHUD (~> 1.0.0)
+  - SnapKit
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: cb62418f2ec548d061567dfa90476ffc550e385a
+
+COCOAPODS: 1.2.1

@@ -1,0 +1,6 @@
+framework module Pods_IOSCustomerSurvey {
+  umbrella header "Pods-IOSCustomerSurvey-umbrella.h"
+
+  export *
+  module * { export * }
+}
