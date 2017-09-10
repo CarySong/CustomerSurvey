@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,18 +21,13 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oSb-61-lh6">
-                                <rect key="frame" x="16" y="20" width="343" height="639"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </scrollView>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <segue destination="uT5-LP-G6f" kind="show" identifier="Login2Register" id="629-tu-Z9O"/>
-                        <segue destination="ZcE-ku-jfz" kind="show" id="wJ2-79-Hrb"/>
-                        <segue destination="uN3-98-fs2" kind="show" id="4Em-Po-iIi"/>
+                        <segue destination="ZcE-ku-jfz" kind="show" identifier="Login2PartSurvey" id="wJ2-79-Hrb"/>
+                        <segue destination="uN3-98-fs2" kind="show" identifier="Login2ServiceSurvey" id="4Em-Po-iIi"/>
+                        <segue destination="bNz-zm-GpX" kind="showDetail" identifier="Login2Report" id="6cb-GF-oNP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -49,12 +45,319 @@
                     <view key="view" contentMode="scaleToFill" id="AUF-Pv-9dg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HT5-7u-hqM">
+                                <rect key="frame" x="112" y="40" width="150" height="34"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hop-rt-xdx" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                        <state key="normal" title="s0"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="smile_carton_1t.png"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iconSize">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="smile_carton_1.png"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outletCollection property="otherButtons" destination="U5J-PV-Cb7" id="Twl-y3-WEE"/>
+                                            <outletCollection property="otherButtons" destination="SLv-v3-Hhi" id="MKb-Wi-VC4"/>
+                                            <outletCollection property="otherButtons" destination="syh-0S-6z5" id="GWK-rV-n0D"/>
+                                            <outletCollection property="otherButtons" destination="U8S-Yl-T6n" id="QCg-7w-ezm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5J-PV-Cb7" customClass="DLRadioButton">
+                                        <rect key="frame" x="30" y="0.0" width="30" height="34"/>
+                                        <state key="normal" title="s1"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="smile_carton_2t.png"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="smile_carton_2.png"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLv-v3-Hhi" customClass="DLRadioButton">
+                                        <rect key="frame" x="60" y="0.0" width="30" height="34"/>
+                                        <state key="normal" title="s2"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="smile_carton_3t.png"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="smile_carton_3.png"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syh-0S-6z5" customClass="DLRadioButton">
+                                        <rect key="frame" x="90" y="0.0" width="30" height="34"/>
+                                        <state key="normal" title="s3"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="smile_carton_4t.png"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="smile_carton_4.png"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8S-Yl-T6n" customClass="DLRadioButton">
+                                        <rect key="frame" x="120" y="0.0" width="30" height="34"/>
+                                        <state key="normal" title="s4"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="smile_carton_5t.png"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="smile_carton_5.png"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="934-WA-G0v">
+                                <rect key="frame" x="112" y="144" width="60" height="34"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jzh-FP-NHa" customClass="DLRadioButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                        <state key="normal" title="yes"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="yes.png"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="yes_blank"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outletCollection property="otherButtons" destination="g48-Yj-RGc" id="hpf-n4-HVT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g48-Yj-RGc" customClass="DLRadioButton">
+                                        <rect key="frame" x="30" y="0.0" width="30" height="34"/>
+                                        <state key="normal" title="no"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="no.png"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconSelected" value="no_blank"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGj-WI-ydo">
+                                <rect key="frame" x="164.5" y="629" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="submitBtnClick:" destination="ZcE-ku-jfz" eventType="touchUpInside" id="6AB-yr-xtB"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcL-48-4Wn" customClass="RatingControlView" customModule="IOSCustomerSurvey" customModuleProvider="target">
+                                <rect key="frame" x="112" y="235" width="220" height="44"/>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="934-WA-G0v" firstAttribute="top" secondItem="HT5-7u-hqM" secondAttribute="bottom" constant="70" id="2KO-UF-OVl"/>
+                            <constraint firstItem="fcL-48-4Wn" firstAttribute="leading" secondItem="HT5-7u-hqM" secondAttribute="leading" id="KJ9-Ks-QD5"/>
+                            <constraint firstItem="HT5-7u-hqM" firstAttribute="centerX" secondItem="AUF-Pv-9dg" secondAttribute="centerX" id="PVV-8b-YH1"/>
+                            <constraint firstItem="934-WA-G0v" firstAttribute="leading" secondItem="HT5-7u-hqM" secondAttribute="leading" id="cbo-c5-tdy"/>
+                            <constraint firstItem="934-WA-G0v" firstAttribute="leading" secondItem="HT5-7u-hqM" secondAttribute="leading" id="eij-Wp-ocr"/>
+                            <constraint firstItem="fcL-48-4Wn" firstAttribute="top" secondItem="934-WA-G0v" secondAttribute="bottom" constant="57" id="ibt-0D-PMZ"/>
+                            <constraint firstItem="HT5-7u-hqM" firstAttribute="top" secondItem="tJV-4U-ATe" secondAttribute="bottom" constant="20" id="n4t-52-ErX"/>
+                            <constraint firstItem="hGj-WI-ydo" firstAttribute="centerX" secondItem="AUF-Pv-9dg" secondAttribute="centerX" id="nvW-D5-Dh2"/>
+                            <constraint firstItem="hfe-gh-hMH" firstAttribute="top" secondItem="hGj-WI-ydo" secondAttribute="bottom" constant="8" id="pOn-1J-4ir"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="happyBtn" destination="Hop-rt-xdx" id="GSC-fE-Qap"/>
+                        <outlet property="ratingControl" destination="fcL-48-4Wn" id="ZUs-uo-Fdt"/>
+                        <outlet property="submitBtn" destination="hGj-WI-ydo" id="YmV-X3-kPs"/>
+                        <outlet property="yesBtn" destination="Jzh-FP-NHa" id="EHa-Vn-lP0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkZ-Ed-Sjr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1337" y="360"/>
+            <point key="canvasLocation" x="1408.8" y="-179.46026986506749"/>
+        </scene>
+        <!--Report Generation View Controller-->
+        <scene sceneID="9QI-YV-aDB">
+            <objects>
+                <viewController id="hYb-wh-lKy" customClass="ReportGenerationViewController" customModule="IOSCustomerSurvey" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WAQ-JT-RDd"/>
+                        <viewControllerLayoutGuide type="bottom" id="eIs-HC-6F1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pXS-HS-WE4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0J-iE-i9R">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GjE-CH-Ed9">
+                                        <rect key="frame" x="8" y="28" width="359" height="600"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8GJ-tA-Fla" customClass="PieChartView" customModule="Charts">
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ewy-dV-gaS" customClass="PieChartView" customModule="Charts">
+                                                <rect key="frame" x="0.0" y="200" width="359" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bvu-Hr-eq0" customClass="BarChartView" customModule="Charts">
+                                                <rect key="frame" x="0.0" y="400" width="359" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="600" id="54T-Ih-2Bx"/>
+                                            <constraint firstItem="Ewy-dV-gaS" firstAttribute="top" secondItem="GjE-CH-Ed9" secondAttribute="top" constant="200" id="5iw-lw-cNS"/>
+                                            <constraint firstItem="Ewy-dV-gaS" firstAttribute="centerY" secondItem="GjE-CH-Ed9" secondAttribute="centerY" id="cfc-MH-jlO"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="GjE-CH-Ed9" secondAttribute="trailing" id="1MV-vz-sW6"/>
+                                    <constraint firstItem="GjE-CH-Ed9" firstAttribute="centerX" secondItem="w0J-iE-i9R" secondAttribute="centerX" id="Ijj-u9-irG"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="GjE-CH-Ed9" secondAttribute="bottom" id="KPa-gd-pAL"/>
+                                    <constraint firstItem="GjE-CH-Ed9" firstAttribute="leading" secondItem="w0J-iE-i9R" secondAttribute="leadingMargin" id="St5-DA-tlM"/>
+                                    <constraint firstItem="GjE-CH-Ed9" firstAttribute="top" secondItem="w0J-iE-i9R" secondAttribute="topMargin" constant="20" id="ngJ-S0-Iri"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="w0J-iE-i9R" secondAttribute="trailing" id="0be-3G-jUL"/>
+                            <constraint firstItem="w0J-iE-i9R" firstAttribute="leading" secondItem="pXS-HS-WE4" secondAttribute="leading" id="QTV-2v-oHC"/>
+                            <constraint firstItem="eIs-HC-6F1" firstAttribute="top" secondItem="w0J-iE-i9R" secondAttribute="bottom" id="fB6-L5-V79"/>
+                            <constraint firstItem="w0J-iE-i9R" firstAttribute="top" secondItem="pXS-HS-WE4" secondAttribute="top" id="v9X-Nu-NtC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="barChart" destination="bvu-Hr-eq0" id="m3o-iT-YZH"/>
+                        <outlet property="pieChar2" destination="Ewy-dV-gaS" id="cLw-84-THI"/>
+                        <outlet property="pieChart1" destination="8GJ-tA-Fla" id="3ZI-nU-sAa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9nI-32-5w3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="439" y="750"/>
+        </scene>
+        <!--Reports View Controller-->
+        <scene sceneID="sHr-It-fa8">
+            <objects>
+                <viewController id="bNz-zm-GpX" customClass="ReportsViewController" customModule="IOSCustomerSurvey" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uYy-GZ-VTl"/>
+                        <viewControllerLayoutGuide type="bottom" id="Eys-Ny-Nne"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JbL-Wa-l89">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="67R-Yb-M6e">
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YeO-3T-3rh">
+                                        <rect key="frame" x="77" y="46" width="188" height="172"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CS3-Ne-8Gn">
+                                                <rect key="frame" x="0.0" y="0.0" width="147" height="30"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DealerId" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hzI-6e-Fs6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                        </accessibility>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Caf-F1-sVD">
+                                                        <rect key="frame" x="75" y="0.0" width="72" height="30"/>
+                                                        <state key="normal" title="Button" image="icon-person"/>
+                                                        <connections>
+                                                            <action selector="dealerIdBtnClick:" destination="bNz-zm-GpX" eventType="touchUpInside" id="KhL-3Z-Jud"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gqB-Tg-RQl">
+                                                <rect key="frame" x="0.0" y="46" width="188" height="30"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Duration From" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N5e-l7-BHA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="113" height="30"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                        </accessibility>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19K-Kw-RQz">
+                                                        <rect key="frame" x="113" y="0.0" width="75" height="30"/>
+                                                        <state key="normal" title="Button" image="Calendar"/>
+                                                        <connections>
+                                                            <action selector="dateFromBtnClick:" destination="bNz-zm-GpX" eventType="touchUpInside" id="HSb-cT-smz"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wg7-uL-dWE">
+                                                <rect key="frame" x="0.0" y="92" width="171" height="30"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Duration To" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lQZ-pf-Su7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <accessibilityTraits key="traits" notEnabled="YES" searchField="YES"/>
+                                                        </accessibility>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1P-iT-Hvz">
+                                                        <rect key="frame" x="96" y="0.0" width="75" height="30"/>
+                                                        <state key="normal" title="Button" image="Calendar"/>
+                                                        <connections>
+                                                            <action selector="dateToBtnClick:" destination="bNz-zm-GpX" eventType="touchUpInside" id="m0y-Is-3fO"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dgv-uo-6z0">
+                                                <rect key="frame" x="0.0" y="138" width="95" height="34"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etN-EG-h0u" customClass="DLRadioButton">
+                                                        <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
+                                                        <state key="normal" title="Part"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                                                <color key="value" red="0.30270386220000001" green="1" blue="0.23462396790000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9u-eu-vMX" customClass="DLRadioButton">
+                                                        <rect key="frame" x="34" y="0.0" width="61" height="34"/>
+                                                        <state key="normal" title="Service"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                                                <color key="value" red="0.30270386220000001" green="1" blue="0.23462396790000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4th-HI-gry">
+                                <rect key="frame" x="155" y="318" width="64" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Generate"/>
+                                <connections>
+                                    <action selector="generateBtnClick:" destination="bNz-zm-GpX" eventType="touchUpInside" id="u1Z-4Z-FD5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnGenerate" destination="4th-HI-gry" id="pS6-Es-clx"/>
+                        <outlet property="partRadioBtn" destination="etN-EG-h0u" id="0o7-7l-jaX"/>
+                        <outlet property="serviceRadioBtn" destination="K9u-eu-vMX" id="X1v-lj-CG7"/>
+                        <outlet property="txtDealerId" destination="hzI-6e-Fs6" id="fpR-H5-3Lr"/>
+                        <outlet property="txtDurationFrom" destination="N5e-l7-BHA" id="Ue7-4R-RyZ"/>
+                        <outlet property="txtDurationTo" destination="lQZ-pf-Su7" id="c0f-mB-vGI"/>
+                        <segue destination="hYb-wh-lKy" kind="showDetail" identifier="2Generate" id="Mxa-9a-qkg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v1z-n3-WVa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-340" y="749.7751124437782"/>
         </scene>
         <!--Service Vey View Controller-->
         <scene sceneID="g07-iB-Oh7">
@@ -72,7 +375,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLN-yz-Nw0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="642" y="702"/>
+            <point key="canvasLocation" x="1409" y="479"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="UI7-I6-wdT">
@@ -84,26 +387,31 @@
                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ezH-zo-bc7">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <subviews>
-                                <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bQT-w8-BXh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="ycN-OR-XiE">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </view>
-                                    <vibrancyEffect>
-                                        <blurEffect style="light"/>
-                                    </vibrancyEffect>
-                                </visualEffectView>
-                            </subviews>
                         </view>
                         <blurEffect style="light"/>
                     </visualEffectView>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGK-u4-lUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="706" y="-292"/>
+            <point key="canvasLocation" x="1409" y="-848"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Calendar" width="21" height="21"/>
+        <image name="icon-person" width="18" height="18"/>
+        <image name="no.png" width="16" height="16"/>
+        <image name="no_blank" width="16" height="16"/>
+        <image name="smile_carton_1.png" width="96" height="96"/>
+        <image name="smile_carton_1t.png" width="96" height="96"/>
+        <image name="smile_carton_2.png" width="96" height="96"/>
+        <image name="smile_carton_2t.png" width="96" height="96"/>
+        <image name="smile_carton_3.png" width="96" height="96"/>
+        <image name="smile_carton_3t.png" width="96" height="96"/>
+        <image name="smile_carton_4.png" width="96" height="96"/>
+        <image name="smile_carton_4t.png" width="96" height="96"/>
+        <image name="smile_carton_5.png" width="96" height="96"/>
+        <image name="smile_carton_5t.png" width="96" height="96"/>
+        <image name="yes.png" width="16" height="16"/>
+        <image name="yes_blank" width="96" height="96"/>
+    </resources>
 </document>

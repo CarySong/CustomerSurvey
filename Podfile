@@ -8,4 +8,6 @@ target 'IOSCustomerSurvey' do
     pod 'MBProgressHUD', '~> 1.0.0'
     pod 'HandyJSON', '~> 1.7.2'
     pod 'SnapKit'
+    pod 'DLRadioButton', '~> 1.4'
+    pod 'Charts'
 end

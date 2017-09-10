@@ -8,27 +8,30 @@
 
 import UIKit
 import SnapKit
+import DLRadioButton
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    var txtUser: UITextField! //用户名输入框
-    var txtPwd: UITextField! //密码输入款
-    var formView: UIView! //登陆框视图
-    var horizontalLine: UIView! //分隔线
-    var confirmButton:UIButton! //登录按钮
-    var titleLabel: UILabel! //标题标签
+    var txtUser: UITextField!
+    var txtPwd: UITextField!
+    var formView: UIView!
+    var horizontalLine1: UIView!
+    var horizontalLine2: UIView!
+    var confirmButton:UIButton!
+    var registerButton: UIButton!
+    var titleLabel: UILabel!
+    var partRadioButton: DLRadioButton!
+    var serviceRadioButton: DLRadioButton!
     
     var topConstraint: Constraint? //登录框距顶部距离约束
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //视图背景色
-        self.view.backgroundColor = UIColor(red: 1/255, green: 170/255, blue: 235/255,
-                                            alpha: 1)
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"backgroud.jpeg")!)
+
         //登录框高度
-        let formViewHeight = 90
+        let formViewHeight = 150
         //登录框背景
         self.formView = UIView()
         self.formView.layer.borderWidth = 0.5
@@ -45,31 +48,47 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             make.height.equalTo(formViewHeight)
         }
         
-        //分隔线
-        self.horizontalLine =  UIView()
-        self.horizontalLine.backgroundColor = UIColor.lightGray
-        self.formView.addSubview(self.horizontalLine)
-        self.horizontalLine.snp.makeConstraints { (make) -> Void in
+        //分隔线1
+        self.horizontalLine1 =  UIView()
+        self.horizontalLine1.backgroundColor = UIColor.lightGray
+        self.formView.addSubview(self.horizontalLine1)
+        self.horizontalLine1.snp.makeConstraints { (make) -> Void in
             make.height.equalTo(0.5)
             make.left.equalTo(15)
             make.right.equalTo(-15)
-            make.centerY.equalTo(self.formView)
+            make.centerY.equalTo(self.formView).offset(-formViewHeight/6)
         }
+        //分隔线2
+        self.horizontalLine2 =  UIView()
+        self.horizontalLine2.backgroundColor = UIColor.lightGray
+        self.formView.addSubview(self.horizontalLine2)
+        self.horizontalLine2.snp.makeConstraints { (make) -> Void in
+            make.height.equalTo(0.5)
+            make.left.equalTo(15)
+            make.right.equalTo(-15)
+            make.centerY.equalTo(self.formView).offset(formViewHeight/6)
+        }
+
         
         //用户名图标
         let imgLock1 =  UIImageView(frame:CGRect(x: 11, y: 11, width: 22, height: 22))
-        imgLock1.image = UIImage(named:"iconfont-user")
+        imgLock1.image = UIImage(named:"icon-person")
         
         //密码图标
         let imgLock2 =  UIImageView(frame:CGRect(x: 11, y: 11, width: 22, height: 22))
-        imgLock2.image = UIImage(named:"iconfont-password")
+        imgLock2.image = UIImage(named:"icon-key")
+        
+        //密码图标
+        let imgLock3 =  UIImageView(frame:CGRect(x: 11, y: 11, width: 22, height: 22))
+        imgLock3.image = UIImage(named:"icon-setting")
+        
         
         //用户名输入框
         self.txtUser = UITextField()
         self.txtUser.delegate = self
-        self.txtUser.placeholder = "用户名"
+        self.txtUser.placeholder = "DealerId"
         self.txtUser.tag = 100
-        self.txtUser.leftView = UIView(frame:CGRect(x: 0, y: 0, width: 44, height: 44))
+        self.txtUser.leftView = UIView(frame:CGRect(x: 0, y: 0, width: 44, height: 49))
         self.txtUser.leftViewMode = UITextFieldViewMode.always
         self.txtUser.returnKeyType = UIReturnKeyType.next
         
@@ -81,16 +100,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.txtUser.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(15)
             make.right.equalTo(-15)
-            make.height.equalTo(44)
-            make.centerY.equalTo(self.formView).offset(-formViewHeight/4)
+            make.height.equalTo(49)
+            make.centerY.equalTo(self.formView).offset(-formViewHeight/3)
         }
         
         //密码输入框
         self.txtPwd = UITextField()
         self.txtPwd.delegate = self
-        self.txtPwd.placeholder = "密码"
+        self.txtPwd.placeholder = "Password"
         self.txtPwd.tag = 101
-        self.txtPwd.leftView = UIView(frame:CGRect(x: 0, y: 0, width: 44, height: 44))
+        self.txtPwd.isSecureTextEntry = true
+        self.txtPwd.leftView = UIView(frame:CGRect(x: 0, y: 0, width: 44, height: 49))
         self.txtPwd.leftViewMode = UITextFieldViewMode.always
         self.txtPwd.returnKeyType = UIReturnKeyType.next
         
@@ -102,9 +122,55 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.txtPwd.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(15)
             make.right.equalTo(-15)
-            make.height.equalTo(44)
-            make.centerY.equalTo(self.formView).offset(formViewHeight/4)
+            make.height.equalTo(49)
+            make.centerY.equalTo(self.formView)
         }
+        
+        self.formView.addSubview(imgLock3)
+        //布局
+        imgLock3.snp.makeConstraints { (make) -> Void in
+            make.left.equalTo(24.5)
+            make.width.equalTo(22)
+            make.height.equalTo(22)
+            make.centerY.equalTo(self.formView).offset(formViewHeight/3)
+            
+        }
+
+        partRadioButton = DLRadioButton(frame:CGRect(x: 0, y: 0, width: 100, height: 49));
+        partRadioButton.titleLabel!.font = UIFont.systemFont(ofSize: 16);
+        partRadioButton.setTitle("Part", for: UIControlState());
+        partRadioButton.setTitleColor(UIColor.lightGray, for: UIControlState());
+        partRadioButton.iconColor = UIColor.lightGray;
+        partRadioButton.indicatorColor = UIColor.red;
+        partRadioButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left;
+        partRadioButton.isSelected = true
+        self.formView.addSubview(partRadioButton);
+        
+        partRadioButton.snp.makeConstraints{ (make) -> Void in
+            make.left.equalTo(imgLock3.snp.right).offset(25)
+            make.width.equalTo(100)
+            make.height.equalTo(49)
+            make.centerY.equalTo(self.formView).offset(formViewHeight/3)
+        }
+
+        
+        serviceRadioButton = DLRadioButton(frame:CGRect(x: 0, y: 0, width: 100, height: 49));
+        serviceRadioButton.titleLabel!.font = UIFont.systemFont(ofSize: 16);
+        serviceRadioButton.setTitle("Service", for: UIControlState());
+        serviceRadioButton.setTitleColor(UIColor.lightGray, for: UIControlState());
+        serviceRadioButton.iconColor = UIColor.lightGray;
+        serviceRadioButton.indicatorColor = UIColor.red;
+        serviceRadioButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left;
+        self.formView.addSubview(serviceRadioButton);
+        partRadioButton.otherButtons.append(serviceRadioButton)
+        
+        serviceRadioButton.snp.makeConstraints { (make) -> Void in
+            make.size.equalTo(partRadioButton)
+            make.left.equalTo(partRadioButton.snp.right).offset(25)
+            make.height.equalTo(49)
+            make.centerY.equalTo(self.formView).offset(formViewHeight/3)
+        }
+
         
         //登录按钮
         self.confirmButton = UIButton()
@@ -118,12 +184,31 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                      for: .touchUpInside)
         self.view.addSubview(self.confirmButton)
         self.confirmButton.snp.makeConstraints { (make) -> Void in
-            make.left.equalTo(15)
+            make.left.equalTo(25)
             make.top.equalTo(self.formView.snp.bottom).offset(20)
-            make.right.equalTo(-15)
-            make.height.equalTo(44)
+            make.width.equalTo(self.formView).multipliedBy(0.3)
+            make.height.equalTo(40)
+            
         }
         
+        //Register button
+        self.registerButton = UIButton()
+        self.registerButton.setTitle("Sign Up", for: UIControlState())
+        self.registerButton.setTitleColor(UIColor.black,
+                                         for: UIControlState())
+        self.registerButton.layer.cornerRadius = 5
+        self.registerButton.backgroundColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1,
+                                                     alpha: 0.5)
+        self.registerButton.addTarget(self, action: #selector(registerClick),
+                                     for: .touchUpInside)
+        self.view.addSubview(self.registerButton)
+        self.registerButton.snp.makeConstraints { (make) -> Void in
+            make.size.equalTo(self.confirmButton)
+            make.top.equalTo(self.formView.snp.bottom).offset(20)
+            make.right.equalTo(-25)
+            make.height.equalTo(40)
+        }
+
         //标题label
         self.titleLabel = UILabel()
         self.titleLabel.text = "CustomerSurvey"
@@ -133,9 +218,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.titleLabel.snp.makeConstraints { (make) -> Void in
             make.bottom.equalTo(self.formView.snp.top).offset(-20)
             make.centerX.equalTo(self.view)
-            make.height.equalTo(44)
+            make.height.equalTo(59)
         }
-    }
+     }
+    
+    
     //输入框获取焦点开始编辑
     func textFieldDidBeginEditing(_ textField:UITextField)
     {
@@ -169,18 +256,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.topConstraint?.update(offset: 0)
             self.view.layoutIfNeeded()
         })
+        
+        AFWrapper.Login(Login_URL,userId: "6331",password: "123456",success: {(model) -> Void in
+            print(model.Authorization!)
+            let defaults = UserDefaults.standard
+            defaults.setValue(model.Authorization, forKey: TOKEN)
+            defaults.synchronize()
+            
+            if (self.partRadioButton.isSelected)
+            {
+              self.performSegue(withIdentifier: "Login2Report", sender: "DealerID")
+            }
+            else
+            {
+               self.performSegue(withIdentifier: "Login2PartSurvey", sender: "DealerID")
+            }
+
+            }) {
+            (error) -> Void in
+            print(error)
+        }
     }
     
-//    let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos/1"
-//    Alamofire.request(todoEndpoint)
-//    .responseJSON { response in
-//    guard response.result.isSuccess else {
-//    // handle failure
-//    return
-//    }
-//    // handle success
-//    }
+    func registerClick(){
+        self.performSegue(withIdentifier: "Login2Register", sender: nil);
+    }
 
-    
-//    please refer to: https://grokswift.com/rest-with-alamofire-swiftyjson/
  }

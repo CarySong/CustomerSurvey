@@ -7,29 +7,33 @@
 //
 
 import UIKit
-
+import DLRadioButton
 class PartSurveyViewController: UIViewController {
 
+    @IBOutlet weak var happyBtn: DLRadioButton!
+
+    @IBOutlet weak var submitBtn: UIButton!
+    
+    @IBOutlet weak var yesBtn: DLRadioButton!
+    
+    @IBOutlet weak var ratingControl: RatingControlView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func submitBtnClick(_ sender: UIButton) {
+        let message = happyBtn.selected()?.titleLabel?.text!
+        let message2 = yesBtn.selected()?.titleLabel?.text
+        let message3 = ratingControl.rating
+        print(String(format: "%@ is selected.\n",message!))
+        print(String(format: "%@ is selected.\n",message2!))
+        print(String(format: "%@ is selected.\n",String(message3)))
+        
     }
-    */
+
+   
 
 }
