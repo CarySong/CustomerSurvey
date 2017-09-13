@@ -26,16 +26,16 @@
                     <navigationItem key="navigationItem" id="d6e-4p-pPs"/>
                     <connections>
                         <segue destination="tmV-e9-1Mk" kind="presentation" identifier="Login2Register" id="629-tu-Z9O"/>
-                        <segue destination="ZcE-ku-jfz" kind="show" identifier="Login2PartSurvey" id="wJ2-79-Hrb"/>
-                        <segue destination="uN3-98-fs2" kind="show" identifier="Login2ServiceSurvey" id="4Em-Po-iIi"/>
                         <segue destination="bNz-zm-GpX" kind="show" identifier="Login2Report" id="IUe-1k-Xgb"/>
+                        <segue destination="ZcE-ku-jfz" kind="show" identifier="Login2PartSurvey" id="BCu-5f-2Zr"/>
+                        <segue destination="uN3-98-fs2" kind="show" identifier="Login2ServiceSurvey" id="s4y-VZ-JZy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="553" y="-434"/>
         </scene>
-        <!--Part Survey View Controller-->
+        <!--Part Survey-->
         <scene sceneID="heF-Hp-4uV">
             <objects>
                 <viewController id="ZcE-ku-jfz" customClass="PartSurveyViewController" customModule="IOSCustomerSurvey" customModuleProvider="target" sceneMemberID="viewController">
@@ -150,6 +150,9 @@
                             <constraint firstItem="hfe-gh-hMH" firstAttribute="top" secondItem="hGj-WI-ydo" secondAttribute="bottom" constant="8" id="pOn-1J-4ir"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Part Survey" id="ZCg-wJ-6yf">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="1t6-qT-Bj2"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="happyBtn" destination="Hop-rt-xdx" id="GSC-fE-Qap"/>
                         <outlet property="ratingControl" destination="fcL-48-4Wn" id="ZUs-uo-Fdt"/>
@@ -159,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkZ-Ed-Sjr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3408.8000000000002" y="-838.83058470764627"/>
+            <point key="canvasLocation" x="2186" y="-845"/>
         </scene>
         <!--Report Generation View Controller-->
         <scene sceneID="9QI-YV-aDB">
@@ -217,6 +220,9 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="wJQ-Lb-a75">
+                        <barButtonItem key="rightBarButtonItem" title="Email" id="40N-b9-xiP"/>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="barChart" destination="bvu-Hr-eq0" id="m3o-iT-YZH"/>
@@ -226,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9nI-32-5w3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3342" y="710"/>
+            <point key="canvasLocation" x="1786" y="469"/>
         </scene>
         <!--Reports-->
         <scene sceneID="sHr-It-fa8">
@@ -345,7 +351,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <segue destination="hYb-wh-lKy" kind="show" identifier="Login2Generate" id="XJ1-59-MoV"/>
+                                            <segue destination="hYb-wh-lKy" kind="show" id="AXQ-nc-JVC"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -365,9 +371,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1z-n3-WVa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2449" y="711"/>
+            <point key="canvasLocation" x="895" y="325"/>
         </scene>
-        <!--Service Vey View Controller-->
+        <!--Service Survey-->
         <scene sceneID="g07-iB-Oh7">
             <objects>
                 <viewController id="uN3-98-fs2" customClass="ServiceVeyViewController" customModule="IOSCustomerSurvey" customModuleProvider="target" sceneMemberID="viewController">
@@ -380,10 +386,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="xGm-gl-iB5"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Service Survey" id="1Dn-X0-fde">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="raJ-5e-OMS"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLN-yz-Nw0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3342" y="-132"/>
+            <point key="canvasLocation" x="1974" y="-202"/>
         </scene>
         <!--Register-->
         <scene sceneID="UI7-I6-wdT">
@@ -413,7 +426,7 @@
                                 <action selector="Cancel:" destination="uT5-LP-G6f" id="s9W-aX-sba"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="peS-nT-4tj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="peS-nT-4tj">
                             <connections>
                                 <action selector="saveRegisterationInfo:" destination="uT5-LP-G6f" id="wrj-pY-W07"/>
                             </connections>
@@ -467,7 +480,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x9R-Hl-CHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1861.5999999999999" y="-1452.3238380809596"/>
+            <point key="canvasLocation" x="2114" y="-1534"/>
         </scene>
     </scenes>
     <resources>
