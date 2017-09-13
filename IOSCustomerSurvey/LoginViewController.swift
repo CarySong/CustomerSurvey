@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import DLRadioButton
+import os.log
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -222,6 +223,53 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
      }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for:segue, sender: sender)
+        
+        switch(segue.identifier ?? ""){
+            
+        case "Login2Report":
+            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+            
+        case "Login2Register":
+            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+         
+        case "Login2PartSurvey":
+            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+            
+//        case "ShowDetail":
+//            guard let mealDetailViewController = segue.destination as? MealViewController else{
+//                
+//                fatalError("Unexpected destination:\(segue.destination)")
+//            }
+//            
+//            guard let selectedMealCell = sender as? MealTableViewCell else {
+//                fatalError("Unexpected sender:\(sender)")
+//            }
+//            
+//            guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
+//                fatalError("The selected cell is not being displayed by the table")
+//            }
+//            
+//            let selectedMeal = meals[indexPath.row]
+//            
+//            mealDetailViewController.meal = selectedMeal
+        default:
+            fatalError("Unexpected segue Identifier;\(segue.identifier!)")
+        }
+    }
+
+    
+    
+    @IBAction func unwindToLogin(sender: UIStoryboardSegue) {
+      
+        if let sourceViewController = sender.source as? RegisterViewController  {
+            txtUser.text = sourceViewController.dealerId
+        }
+        
+    }
+    
+
     
     //输入框获取焦点开始编辑
     func textFieldDidBeginEditing(_ textField:UITextField)

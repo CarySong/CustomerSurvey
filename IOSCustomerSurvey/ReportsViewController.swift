@@ -80,7 +80,7 @@ class ReportsViewController: UIViewController {
    
     }
     @IBAction func generateBtnClick(_ sender: Any) {
-         self.performSegue(withIdentifier: "2Generate", sender: nil);
+         self.performSegue(withIdentifier: "Login2Generate", sender: nil);
     }
         
     

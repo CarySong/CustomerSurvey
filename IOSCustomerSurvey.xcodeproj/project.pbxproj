@@ -27,6 +27,7 @@
 		04BD1AC51F621CEE00711913 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD1AC41F621CED00711913 /* DatePickerView.swift */; };
 		04CBD2C01F642E720035485D /* RatingControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBD2BF1F642E720035485D /* RatingControlView.swift */; };
 		04CBD2C31F6430D90035485D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CBD2C11F6430D90035485D /* Main.storyboard */; };
+		04D8A4D31F68FA94003B5A76 /* DealerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8A4D21F68FA94003B5A76 /* DealerModel.swift */; };
 		DD380516E1D2F2901560ABC2 /* Pods_IOSCustomerSurvey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE257F807AEBA68094EB3B4 /* Pods_IOSCustomerSurvey.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		04BD1AC41F621CED00711913 /* DatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		04CBD2BF1F642E720035485D /* RatingControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControlView.swift; sourceTree = "<group>"; };
 		04CBD2C21F6430D90035485D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = IOSCustomerSurvey/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04D8A4D21F68FA94003B5A76 /* DealerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DealerModel.swift; sourceTree = "<group>"; };
 		1EE257F807AEBA68094EB3B4 /* Pods_IOSCustomerSurvey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSCustomerSurvey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE113DBF28589EF924203A5 /* Pods-IOSCustomerSurvey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSCustomerSurvey.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSCustomerSurvey/Pods-IOSCustomerSurvey.release.xcconfig"; sourceTree = "<group>"; };
 		DB2EFC4BF162A4E358661AFB /* Pods-IOSCustomerSurvey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSCustomerSurvey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSCustomerSurvey/Pods-IOSCustomerSurvey.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				04BD1A891F5D4BF000711913 /* PostReturnModel.swift */,
 				04BD1ABF1F5FED8900711913 /* ReportResultModel.swift */,
 				04BD1AC11F6014B100711913 /* ReportSearchCriteriaModel.swift */,
+				04D8A4D21F68FA94003B5A76 /* DealerModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				0476F6A81F62863300B3FD7B /* PickerView.swift in Sources */,
 				04BD1AC21F6014B100711913 /* ReportSearchCriteriaModel.swift in Sources */,
 				048B6E651F5D1F110070DBE6 /* AFWrapper.swift in Sources */,
+				04D8A4D31F68FA94003B5A76 /* DealerModel.swift in Sources */,
 				04BD1A8E1F5D775F00711913 /* Constant.swift in Sources */,
 				04BD1A8C1F5D6DD500711913 /* IOHelper.swift in Sources */,
 				04BD1AC01F5FED8900711913 /* ReportResultModel.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GvN-px-zWE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,16 +23,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="d6e-4p-pPs"/>
                     <connections>
-                        <segue destination="uT5-LP-G6f" kind="show" identifier="Login2Register" id="629-tu-Z9O"/>
+                        <segue destination="tmV-e9-1Mk" kind="presentation" identifier="Login2Register" id="629-tu-Z9O"/>
                         <segue destination="ZcE-ku-jfz" kind="show" identifier="Login2PartSurvey" id="wJ2-79-Hrb"/>
                         <segue destination="uN3-98-fs2" kind="show" identifier="Login2ServiceSurvey" id="4Em-Po-iIi"/>
-                        <segue destination="eL4-KW-9Ks" kind="showDetail" identifier="Login2Report" id="6cb-GF-oNP"/>
+                        <segue destination="bNz-zm-GpX" kind="show" identifier="Login2Report" id="IUe-1k-Xgb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-95.200000000000003" y="28.335832083958024"/>
+            <point key="canvasLocation" x="553" y="-434"/>
         </scene>
         <!--Part Survey View Controller-->
         <scene sceneID="heF-Hp-4uV">
@@ -47,7 +48,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HT5-7u-hqM">
-                                <rect key="frame" x="112" y="40" width="150" height="34"/>
+                                <rect key="frame" x="112" y="84" width="150" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hop-rt-xdx" customClass="DLRadioButton">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
@@ -101,7 +102,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="934-WA-G0v">
-                                <rect key="frame" x="112" y="144" width="60" height="34"/>
+                                <rect key="frame" x="112" y="188" width="60" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jzh-FP-NHa" customClass="DLRadioButton">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
@@ -132,7 +133,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcL-48-4Wn" customClass="RatingControlView" customModule="IOSCustomerSurvey" customModuleProvider="target">
-                                <rect key="frame" x="112" y="235" width="220" height="44"/>
+                                <rect key="frame" x="112" y="279" width="220" height="44"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -144,6 +145,7 @@
                             <constraint firstItem="934-WA-G0v" firstAttribute="leading" secondItem="HT5-7u-hqM" secondAttribute="leading" id="eij-Wp-ocr"/>
                             <constraint firstItem="fcL-48-4Wn" firstAttribute="top" secondItem="934-WA-G0v" secondAttribute="bottom" constant="57" id="ibt-0D-PMZ"/>
                             <constraint firstItem="HT5-7u-hqM" firstAttribute="top" secondItem="tJV-4U-ATe" secondAttribute="bottom" constant="20" id="n4t-52-ErX"/>
+                            <constraint firstItem="HT5-7u-hqM" firstAttribute="top" secondItem="AUF-Pv-9dg" secondAttribute="topMargin" constant="80" id="nAa-Td-Jpr"/>
                             <constraint firstItem="hGj-WI-ydo" firstAttribute="centerX" secondItem="AUF-Pv-9dg" secondAttribute="centerX" id="nvW-D5-Dh2"/>
                             <constraint firstItem="hfe-gh-hMH" firstAttribute="top" secondItem="hGj-WI-ydo" secondAttribute="bottom" constant="8" id="pOn-1J-4ir"/>
                         </constraints>
@@ -157,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkZ-Ed-Sjr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1408.8" y="-179.46026986506749"/>
+            <point key="canvasLocation" x="3408.8000000000002" y="-838.83058470764627"/>
         </scene>
         <!--Report Generation View Controller-->
         <scene sceneID="9QI-YV-aDB">
@@ -172,7 +174,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0J-iE-i9R">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GjE-CH-Ed9">
                                         <rect key="frame" x="8" y="28" width="359" height="600"/>
@@ -214,6 +216,8 @@
                             <constraint firstItem="w0J-iE-i9R" firstAttribute="top" secondItem="pXS-HS-WE4" secondAttribute="top" id="v9X-Nu-NtC"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="barChart" destination="bvu-Hr-eq0" id="m3o-iT-YZH"/>
                         <outlet property="pieChar2" destination="Ewy-dV-gaS" id="cLw-84-THI"/>
@@ -222,9 +226,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9nI-32-5w3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1832.8" y="841.52923538230891"/>
+            <point key="canvasLocation" x="3342" y="710"/>
         </scene>
-        <!--Reports View Controller-->
+        <!--Reports-->
         <scene sceneID="sHr-It-fa8">
             <objects>
                 <viewController id="bNz-zm-GpX" customClass="ReportsViewController" customModule="IOSCustomerSurvey" customModuleProvider="target" sceneMemberID="viewController">
@@ -280,6 +284,7 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button" image="button:g7C-4A-Aqj:image"/>
                                                         <connections>
+                                                            <action selector="dateFromBtnClick:" destination="bNz-zm-GpX" eventType="touchUpInside" id="0Ke-4q-8vh"/>
                                                             <action selector="dateToBtnClick:" destination="bNz-zm-GpX" eventType="touchUpInside" id="dcS-do-oAv"/>
                                                         </connections>
                                                     </button>
@@ -340,7 +345,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="generateBtnClick:" destination="bNz-zm-GpX" eventType="touchUpInside" id="jQ3-no-yxJ"/>
+                                            <segue destination="hYb-wh-lKy" kind="show" identifier="Login2Generate" id="XJ1-59-MoV"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -348,19 +353,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Bd5-FS-Ivh"/>
+                    <navigationItem key="navigationItem" title="Reports" id="Bd5-FS-Ivh"/>
                     <connections>
                         <outlet property="btnGenerate" destination="sgh-Be-Uf0" id="BL1-iN-t4o"/>
                         <outlet property="partRadioBtn" destination="X7V-En-IFS" id="S3i-Am-X8Q"/>
                         <outlet property="serviceRadioBtn" destination="239-Ox-MPm" id="QhY-Oa-7Dj"/>
                         <outlet property="txtDealerId" destination="atY-iY-hjE" id="pPG-z3-3vU"/>
+                        <outlet property="txtDurationFrom" destination="kh7-El-T1S" id="7My-Mx-P0w"/>
                         <outlet property="txtDurationTo" destination="Hv4-6f-Twp" id="qMl-Hg-cbD"/>
-                        <segue destination="hYb-wh-lKy" kind="showDetail" identifier="2Generate" id="Mxa-9a-qkg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1z-n3-WVa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816.79999999999995" y="841.52923538230891"/>
+            <point key="canvasLocation" x="2449" y="711"/>
         </scene>
         <!--Service Vey View Controller-->
         <scene sceneID="g07-iB-Oh7">
@@ -378,9 +383,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLN-yz-Nw0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2447" y="152"/>
+            <point key="canvasLocation" x="3342" y="-132"/>
         </scene>
-        <!--Register View Controller-->
+        <!--Register-->
         <scene sceneID="UI7-I6-wdT">
             <objects>
                 <viewController id="uT5-LP-G6f" customClass="RegisterViewController" customModule="IOSCustomerSurvey" customModuleProvider="target" sceneMemberID="viewController">
@@ -390,31 +395,79 @@
                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ezH-zo-bc7">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Prototype" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PAx-8m-vfB">
+                                    <rect key="frame" x="139" y="318" width="97" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
                         </view>
                         <blurEffect style="light"/>
                     </visualEffectView>
+                    <navigationItem key="navigationItem" title="Register" id="eIa-Nr-efM">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="9ze-K5-28U">
+                            <connections>
+                                <action selector="Cancel:" destination="uT5-LP-G6f" id="s9W-aX-sba"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="peS-nT-4tj">
+                            <connections>
+                                <action selector="saveRegisterationInfo:" destination="uT5-LP-G6f" id="wrj-pY-W07"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="txtDealerId" destination="PAx-8m-vfB" id="ePu-0Z-xws"/>
+                        <segue destination="PsE-8C-P73" kind="unwind" identifier="ToLogin" unwindAction="unwindToLoginWithSender:" id="KeJ-Vy-reA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FGK-u4-lUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PsE-8C-P73" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1409" y="-848"/>
+            <point key="canvasLocation" x="3038" y="-1558"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="9pu-Xh-cfn">
+        <scene sceneID="aYq-dM-B0v">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eL4-KW-9Ks" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GvN-px-zWE" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="V7S-H1-w83">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="M3l-pf-egD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="iU8-jK-e02">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="EQS-9E-3e1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JKH-w0-g1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-169" y="-434"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wIa-f0-lyf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tmV-e9-1Mk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mis-qY-Um0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="bNz-zm-GpX" kind="relationship" relationship="rootViewController" id="hG5-ea-l1k"/>
+                        <segue destination="uT5-LP-G6f" kind="relationship" relationship="rootViewController" id="25V-qL-hQS"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gz4-Ja-TaM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x9R-Hl-CHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-122.40000000000001" y="841.52923538230891"/>
+            <point key="canvasLocation" x="1861.5999999999999" y="-1452.3238380809596"/>
         </scene>
     </scenes>
     <resources>
