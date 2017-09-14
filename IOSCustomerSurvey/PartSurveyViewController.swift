@@ -8,6 +8,7 @@
 
 import UIKit
 import DLRadioButton
+import Alamofire
 class PartSurveyViewController: UIViewController {
 
     @IBOutlet weak var happyBtn: DLRadioButton!
@@ -20,7 +21,7 @@ class PartSurveyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        submitClick();
         
     }
     
@@ -34,6 +35,40 @@ class PartSurveyViewController: UIViewController {
         
     }
 
-   
+    func submitClick(){
+        let customer = CustomerModel()
+        customer.ContactNo = "15222081197"
+        customer.CustomerName = "Song"
+        customer.Email = "Cary.song@volvo.com"
+        let part = PartsModel();
+        part.Customer = customer
+        part.DealerId = "633201"
+        part.Feedback = "feedback"
+        part.IsPartAvailable = true
+        part.RateOfExperience = 4.0
+        part.RateOfWaitingTime = 3
+        
+        let para : Parameters = part.toJSON()!
+        
+        let token = UserDefaults.standard.string(forKey: TOKEN)
+        
+        AFWrapper.postUpdateParts(PostUpdatePartsSurvey,params: para,token: token!,success: {(model) -> Void in
+            guard model != nil  else{
+                //Alert exception
+                return
+            }
+            
+            guard model?.StatusCode != "11003" else{
+                //Alert this dealerId is regesterd
+                return
+            }
+
+            
+        }) {
+            (error) -> Void in
+            print(error)
+        }
+    }
+
 
 }

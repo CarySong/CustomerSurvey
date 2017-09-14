@@ -19,6 +19,8 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dealerIdValidation()
     }
     
     @IBAction func Cancel(_ sender: UIBarButtonItem) {
@@ -62,5 +64,28 @@ class RegisterViewController: UIViewController {
         dealerId = txtDealerId.text ?? ""
 
     }
+    
+    private func dealerIdValidation(){
+        let parameters : Parameters = ["dealerId": "633100"]
+        let token = UserDefaults.standard.string(forKey: TOKEN)
+        
+        AFWrapper.getDealerValidation(GetDealerIdValidtion,params: parameters,token: token!,success: {(returnModel) -> Void in
+            guard returnModel != nil  else{
+                //Alert exception
+                return
+            }
+            
+            guard returnModel!.StatusCode != "11003" else{
+                //Alert this dealerId is regesterd
+                return
+            }
+            
+        }) {
+            (error) -> Void in
+            print(error)
+        }
+        
+    }
+
    
 }

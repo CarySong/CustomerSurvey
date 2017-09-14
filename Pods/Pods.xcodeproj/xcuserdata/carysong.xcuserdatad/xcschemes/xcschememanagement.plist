@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ActionSheetPicker-3.0.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,17 +62,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4B7899C9A78D5442B21A02948DDA2675</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7703A645D5058A38CB5EF4F678E7F9AA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B17D9A6EE6BBAAAE5A3503BF88063609</key>
+		<key>965699190112DDBD9B7864D091660DBC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B1B66D9090E9F1673C98CFA6546D7C60</key>
+		<key>A42295307B05E2143F60A9C3044495A6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -78,11 +93,6 @@
 			<true/>
 		</dict>
 		<key>F6A77E2753C279F67F70C5C21D6FAE15</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FB7E82D67DE2761D459351377BB397F5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

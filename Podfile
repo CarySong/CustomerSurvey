@@ -10,4 +10,5 @@ target 'IOSCustomerSurvey' do
     pod 'SnapKit'
     pod 'DLRadioButton', '~> 1.4'
     pod 'Charts'
+    pod 'ActionSheetPicker-3.0'
 end

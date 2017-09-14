@@ -13,7 +13,13 @@ import SnapKit
 let BASE_URL = "Https://www.gtacustomersurvey.com:443/api/";
 let Login_URL = BASE_URL+"Login";
 let ReportStatistic_URL = BASE_URL + "CustomerSurvey/ServiceReportStatistic"
+let GetDealerIdByMarketId_URL = BASE_URL + "Dealer/List";
 let Registration_URL = BASE_URL + "Dealer"
+let GetDealerIdValidtion = BASE_URL + "Dealer/DealerExist"
+let PostUpdatePartsSurvey = BASE_URL + "CustomerSurvey/Parts"
+let PostUpdateServiceSurvey = BASE_URL + "CustomerSurvey/Service"
+
+
 let TOKEN = "Authorization"
 
 

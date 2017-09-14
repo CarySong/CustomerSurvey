@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class AFWrapper: NSObject {
     
-    class func Login(_ strURL : String, userId: String, password: String, success:@escaping (PostReturnModel) -> Void, failure:@escaping (Error) -> Void){
+    class func Login(_ strURL : String, userId: String, password: String, success:@escaping (PostReturnModel?) -> Void, failure:@escaping (Error) -> Void){
         
         let credentialData = "\(userId):\(password)".data(using: String.Encoding.utf8)!
         let base64Credentials = credentialData.base64EncodedString(options: [])
@@ -23,7 +23,7 @@ class AFWrapper: NSObject {
             switch(response.result) {
             case .success(_):
                 let model = PostReturnModel.deserialize(from: response.value)
-                success(model!)
+                success(model)
             case .failure(_):
                 let error : Error = response.result.error!
                 failure(error)
@@ -31,8 +31,6 @@ class AFWrapper: NSObject {
         }
     }
 
-    
-    
     class func PostWithToken(_ strURL : String, params : Parameters?,token: String, success:@escaping (ReportResultModel) -> Void, failure:@escaping (Error) -> Void){
         let header : HTTPHeaders = [ "Authorization" : token]
                                      
@@ -65,18 +63,49 @@ class AFWrapper: NSObject {
     }
 
     
-    
-    
-    class func requestGETURL(_ strURL: String, success:@escaping (JSON) -> Void, failure:@escaping (Error) -> Void) {
+    class func getDealerByMartketId(_ strURL: String,params : Parameters?,token: String, success:@escaping ([DealerIdModel]?) -> Void, failure:@escaping (Error) -> Void) {
         
-        Alamofire.request(strURL).validate().responseJSON { (responseObject) -> Void in
-            
-            switch responseObject.result {
+         let header : HTTPHeaders = [ "Authorization" : token]
+        
+         Alamofire.request(strURL, method:.get, parameters: params,encoding: URLEncoding.default,headers:header).responseString{ (response) -> Void in
+            switch response.result {
             case .success:
-                let resJson = JSON(responseObject.result.value!)
-                success(resJson)
+                let dealerIds = [DealerIdModel].deserialize(from: response.value)
+                success(dealerIds as? [DealerIdModel])
             case .failure:
-                let error : Error = responseObject.result.error!
+                let error : Error = response.result.error!
+                failure(error)
+            }
+        }
+    }
+
+    class func getDealerValidation(_ strURL: String,params : Parameters?,token: String, success:@escaping (PostReturnModel?) -> Void, failure:@escaping (Error) -> Void) {
+        
+        let header : HTTPHeaders = [ "Authorization" : token]
+        
+        Alamofire.request(strURL, method:.get, parameters: params,encoding: URLEncoding.default,headers:header).responseString{ (response) -> Void in
+            switch response.result {
+            case .success:
+                let returnModel = PostReturnModel.deserialize(from: response.value)
+                success(returnModel)
+            case .failure:
+                let error : Error = response.result.error!
+                failure(error)
+            }
+        }
+    }
+
+    class func postUpdateParts(_ strURL : String, params : Parameters?,token: String, success:@escaping (PostReturnModel?) -> Void, failure:@escaping (Error) -> Void){
+        let header : HTTPHeaders = [ "Authorization" : token]
+        
+        Alamofire.request(strURL, method:.post, parameters: params,encoding: JSONEncoding.default,headers:header).responseString{ (response) -> Void in
+            
+            switch(response.result) {
+            case .success(_):
+                let model = PostReturnModel.deserialize(from: response.value)
+                success(model)
+            case .failure(_):
+                let error : Error = response.result.error!
                 failure(error)
             }
         }

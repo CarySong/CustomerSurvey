@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0421ED8E1F6A639F00267889 /* DealerIdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421ED8D1F6A639F00267889 /* DealerIdModel.swift */; };
+		0421EDBC1F6AB5B000267889 /* PartsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421EDBB1F6AB5B000267889 /* PartsModel.swift */; };
+		0421EDBE1F6AC67F00267889 /* CustomerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421EDBD1F6AC67F00267889 /* CustomerModel.swift */; };
 		0476F6A81F62863300B3FD7B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476F6A71F62863300B3FD7B /* PickerView.swift */; };
 		048B6E081F5AABC70070DBE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6E071F5AABC70070DBE6 /* AppDelegate.swift */; };
 		048B6E0A1F5AABC70070DBE6 /* ReportGenerationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6E091F5AABC70070DBE6 /* ReportGenerationViewController.swift */; };
@@ -42,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0421ED8D1F6A639F00267889 /* DealerIdModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DealerIdModel.swift; sourceTree = "<group>"; };
+		0421EDBB1F6AB5B000267889 /* PartsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsModel.swift; sourceTree = "<group>"; };
+		0421EDBD1F6AC67F00267889 /* CustomerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerModel.swift; sourceTree = "<group>"; };
 		0476F6A71F62863300B3FD7B /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		048B6E041F5AABC70070DBE6 /* IOSCustomerSurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSCustomerSurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048B6E071F5AABC70070DBE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +162,9 @@
 				04BD1ABF1F5FED8900711913 /* ReportResultModel.swift */,
 				04BD1AC11F6014B100711913 /* ReportSearchCriteriaModel.swift */,
 				04D8A4D21F68FA94003B5A76 /* DealerModel.swift */,
+				0421ED8D1F6A639F00267889 /* DealerIdModel.swift */,
+				0421EDBB1F6AB5B000267889 /* PartsModel.swift */,
+				0421EDBD1F6AC67F00267889 /* CustomerModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -364,8 +373,11 @@
 				04BD1AC21F6014B100711913 /* ReportSearchCriteriaModel.swift in Sources */,
 				048B6E651F5D1F110070DBE6 /* AFWrapper.swift in Sources */,
 				04D8A4D31F68FA94003B5A76 /* DealerModel.swift in Sources */,
+				0421EDBE1F6AC67F00267889 /* CustomerModel.swift in Sources */,
+				0421ED8E1F6A639F00267889 /* DealerIdModel.swift in Sources */,
 				04BD1A8E1F5D775F00711913 /* Constant.swift in Sources */,
 				04BD1A8C1F5D6DD500711913 /* IOHelper.swift in Sources */,
+				0421EDBC1F6AB5B000267889 /* PartsModel.swift in Sources */,
 				04BD1AC01F5FED8900711913 /* ReportResultModel.swift in Sources */,
 				04BD1A8A1F5D4BF000711913 /* PostReturnModel.swift in Sources */,
 			);
