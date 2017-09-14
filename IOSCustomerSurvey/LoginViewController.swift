@@ -306,7 +306,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         })
         
         AFWrapper.Login(Login_URL,userId: "6331",password: "123456",success: {(model) -> Void in
-            print(model?.Authorization! ?? <#default value#>)
+            print(model?.Authorization! ?? "")
             guard model != nil  else{
                 //Alert exception
                 return
