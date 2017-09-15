@@ -32,7 +32,7 @@ class ReportsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getDealerIds();
-        getDealerIds();
+
         partRadioBtn.titleLabel!.font = UIFont.systemFont(ofSize: 16);
         partRadioBtn.setTitle("Part", for: UIControlState());
         partRadioBtn.setTitleColor(UIColor.lightGray, for: UIControlState());
@@ -47,13 +47,13 @@ class ReportsViewController: UIViewController {
 
         partRadioBtn.otherButtons.append(serviceRadioBtn)
         
-        dateChoseView = DatePickerView.init(frame:CGRect(x:0,y:0,width:self.view.frame.width,height:self.view.frame.height), onView: self.view)
-        self.view.addSubview(dateChoseView!)
-        
-        pickerView = PickerView.init(frame:CGRect(x:0,y:0,width:self.view.frame.width,height:self.view.frame.height), onView: self.view)
-        //传入要选择的数据
-        pickerView?.dealerIds = dealerIdArray
-        self.view.addSubview(pickerView!)
+//        dateChoseView = DatePickerView.init(frame:CGRect(x:0,y:0,width:self.view.frame.width,height:self.view.frame.height), onView: self.view)
+//        self.view.addSubview(dateChoseView!)
+//        
+//        pickerView = PickerView.init(frame:CGRect(x:0,y:0,width:self.view.frame.width,height:self.view.frame.height), onView: self.view)
+//        //传入要选择的数据
+//        pickerView?.dealerIds = dealerIdArray
+//        self.view.addSubview(pickerView!)
         
     }
     
@@ -65,7 +65,7 @@ class ReportsViewController: UIViewController {
 //            self.txtDealerId.text = dealerId
 //    }
         
-        ActionSheetStringPicker.show(withTitle: "Nav Bar From Picker", rows: ["633100", "633101", "633200"], initialSelection: 1, doneBlock: {
+        ActionSheetStringPicker.show(withTitle: "Nav Bar From Picker", rows: dealerIdArray, initialSelection: 1, doneBlock: {
             picker, value, index in
             
             print("value = \(value)")

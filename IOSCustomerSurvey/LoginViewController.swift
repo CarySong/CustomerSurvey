@@ -111,6 +111,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.txtPwd.placeholder = "Password"
         self.txtPwd.tag = 101
         self.txtPwd.isSecureTextEntry = true
+        self.txtPwd.isSecureTextEntry = true
         self.txtPwd.leftView = UIView(frame:CGRect(x: 0, y: 0, width: 44, height: 49))
         self.txtPwd.leftViewMode = UITextFieldViewMode.always
         self.txtPwd.returnKeyType = UIReturnKeyType.next
@@ -275,8 +276,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-
-    
     //输入框获取焦点开始编辑
     func textFieldDidBeginEditing(_ textField:UITextField)
     {
@@ -311,54 +310,72 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.view.layoutIfNeeded()
         })
         
-        AFWrapper.Login(Login_URL,userId: "6331",password: "123456",success: {(model) -> Void in
-            print(model?.Authorization! ?? "")
+        let userId = txtUser.text ?? ""
+        
+        let password = txtPwd.text ?? ""
+        
+        guard !userId.isEmpty else {
+           AlertView_show("Error", message: "The Dealer Id is invalid!")
+           txtUser.becomeFirstResponder()
+           return
+        }
+        
+        guard !password.isEmpty else {
+            AlertView_show("Error", message: "The Password is invalid!")
+            txtPwd.becomeFirstResponder()
+            return
+        }
+        
+        AFWrapper.Login(Login_URL,userId: userId,password: password,success: {(model) -> Void in
+            
             guard model != nil  else{
-                //Alert exception
-                return
+            AlertView_show("Error", message: "Please contact support")
+            self.txtUser.becomeFirstResponder()
+            return
             }
             
             guard (model?.StatusCode != "10003" ) else {
-                //Todo:    jump to survey
                 let defaults = UserDefaults.standard
                 defaults.setValue(model?.Authorization, forKey: TOKEN)
                 defaults.synchronize()
-                
                 if (self.partRadioButton.isSelected)
                 {
-                    self.performSegue(withIdentifier: "Login2Report", sender: "DealerID")
+                    self.performSegue(withIdentifier: "Login2PartSurveys", sender: "DealerID")
                 }
                 else
                 {
-                    self.performSegue(withIdentifier: "Login2PartSurvey", sender: "DealerID")
+                    self.performSegue(withIdentifier: "Login2ServiceSurveys", sender: "DealerID")
                 }
-
                 return
             }
             
             guard (model?.StatusCode != "10004" ) else {
-                //Todo:    jump to Report
+                //Navigate to Report
                 let defaults = UserDefaults.standard
                 defaults.setValue(model?.Authorization, forKey: TOKEN)
                 defaults.synchronize()
-                
-
+                self.performSegue(withIdentifier: "Login2Report", sender: "DealerID")
                 return
             }
             
             guard (model?.StatusCode != "10001" ) else {
-                //Todo:    dealer is Invalid  Alert
-                return
+            //DealerId is Invalid  Alert
+            AlertView_show("Error", message: "The Dealer Id is invalid!")
+            self.txtUser.becomeFirstResponder()
+            return
             }
             
             guard (model?.StatusCode != "10002" ) else {
-                //Todo:    Password is Invalid  Alert
+                AlertView_show("Error", message: "The Password is invalid!")
+                self.txtPwd.becomeFirstResponder()
                 return
             }
            
             }) {
             (error) -> Void in
-            print(error)
+            AlertView_show("Error", message: "Network error, please try again")
+
+            NSLog(error as! String)
         }
     }
     

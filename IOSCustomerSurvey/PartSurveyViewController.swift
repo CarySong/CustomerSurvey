@@ -19,6 +19,8 @@ class PartSurveyViewController: UIViewController {
     
     @IBOutlet weak var ratingControl: RatingControlView!
     
+    var dealerId : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         submitClick();
@@ -54,8 +56,8 @@ class PartSurveyViewController: UIViewController {
         
         AFWrapper.postUpdateParts(PostUpdatePartsSurvey,params: para,token: token!,success: {(model) -> Void in
             guard model != nil  else{
-                //Alert exception
-                return
+            AlertView_show("Error", message: "Please contact support")
+            return
             }
             
             guard model?.StatusCode != "11003" else{
@@ -66,7 +68,8 @@ class PartSurveyViewController: UIViewController {
             
         }) {
             (error) -> Void in
-            print(error)
+            AlertView_show("Error", message: "Network error, please try again")
+            NSLog(error as! String)
         }
     }
 
