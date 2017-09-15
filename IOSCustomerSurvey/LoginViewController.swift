@@ -236,6 +236,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
          
         case "Login2PartSurvey":
             os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+        
+        case "Login2PartSurveys":
+            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+            
+        case "Login2ServiceSurveys":
+            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
             
 //        case "ShowDetail":
 //            guard let mealDetailViewController = segue.destination as? MealViewController else{
