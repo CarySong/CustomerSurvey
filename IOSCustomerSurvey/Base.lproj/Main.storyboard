@@ -387,13 +387,6 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Prototype" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PAx-8m-vfB">
-                                    <rect key="frame" x="139" y="318" width="97" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <nil key="textColor"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </textField>
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XKx-Cd-MCZ">
                                     <rect key="frame" x="112" y="424" width="240" height="128"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -416,7 +409,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="txtDealerId" destination="PAx-8m-vfB" id="ePu-0Z-xws"/>
                         <segue destination="PsE-8C-P73" kind="unwind" identifier="ToLogin" unwindAction="unwindToLoginWithSender:" id="KeJ-Vy-reA"/>
                     </connections>
                 </viewController>
