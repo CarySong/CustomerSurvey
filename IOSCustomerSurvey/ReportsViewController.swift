@@ -1,153 +1,133 @@
 //
-//  ReportsViewController.swift
+//  ViewController.swift
 //  IOSCustomerSurvey
 //
-//  Created by Cary Song on 2017/9/6.
+//  Created by Cary Song on 2017/9/2.
 //  Copyright © 2017年 Volvo. All rights reserved.
 //
 
 import UIKit
 import Alamofire
-import Foundation
-import DLRadioButton
-import ActionSheetPicker_3_0
-
+import Charts
 
 class ReportsViewController: UIViewController {
 
-    @IBOutlet weak var txtDealerId: UITextField!
-    @IBOutlet weak var txtDurationFrom: UITextField!
-    @IBOutlet weak var txtDurationTo: UITextField!
-    
-    @IBOutlet weak var btnGenerate: UIButton!
-    
-    @IBOutlet weak var serviceRadioBtn: DLRadioButton!
    
-    @IBOutlet weak var partRadioBtn: DLRadioButton!
+    @IBOutlet weak var pieChart1: PieChartView!
     
-    var dateChoseView:DatePickerView?
-    var pickerView:PickerView?
-    var dealerIdArray:[String] = []
-  
+    
+    @IBOutlet weak var pieChar2: PieChartView!
+    
+    @IBOutlet weak var barChart: BarChartView!
+    
+    var searchCriteria : ReportSearchCriteriaModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        getDealerIds();
+        generateReports();
+    }
 
-        partRadioBtn.titleLabel!.font = UIFont.systemFont(ofSize: 16);
-        partRadioBtn.setTitle("Part", for: UIControlState());
-        partRadioBtn.setTitleColor(UIColor.lightGray, for: UIControlState());
-        partRadioBtn.iconColor = UIColor.lightGray;
-        partRadioBtn.indicatorColor = UIColor.red;
-        
-        serviceRadioBtn.titleLabel!.font = UIFont.systemFont(ofSize: 16);
-        serviceRadioBtn.setTitle("Service", for: UIControlState());
-        serviceRadioBtn.setTitleColor(UIColor.lightGray, for: UIControlState());
-        serviceRadioBtn.iconColor = UIColor.lightGray;
-        serviceRadioBtn.indicatorColor = UIColor.red;
-
-        partRadioBtn.otherButtons.append(serviceRadioBtn)
-        
-//        dateChoseView = DatePickerView.init(frame:CGRect(x:0,y:0,width:self.view.frame.width,height:self.view.frame.height), onView: self.view)
-//        self.view.addSubview(dateChoseView!)
+    
+    func generateReports(){
+//                let dateFormatter = DateFormatter()
+//                dateFormatter.dateFormat = "yyyy/MM/dd hh:mm:ss"
 //        
-//        pickerView = PickerView.init(frame:CGRect(x:0,y:0,width:self.view.frame.width,height:self.view.frame.height), onView: self.view)
-//        //传入要选择的数据
-//        pickerView?.dealerIds = dealerIdArray
-//        self.view.addSubview(pickerView!)
+//                let to = dateFormatter.string(from: Date())
+//        
+//                let secondsPerday:TimeInterval = 24*60*60
+//        
+//                let dateFrom = Date(timeIntervalSinceNow: secondsPerday * -10)
+//        
+//                let from = dateFormatter.string(from: dateFrom)
+//
+//                let parameters: Parameters = ["DealerId": "633100","DealerName": "","DurationFrom": from, "durationTo":to ]
         
-    }
-    
-   
-    @IBAction func dealerIdBtnClick(_ sender: UIButton) {
-//        pickerView?.showView()
-//        pickerView?.pickerDidChange {
-//            (dealerId :String )  in
-//            self.txtDealerId.text = dealerId
-//    }
+                let para : Parameters = searchCriteria!.toJSON()!
         
-        ActionSheetStringPicker.show(withTitle: "Nav Bar From Picker", rows: dealerIdArray, initialSelection: 1, doneBlock: {
-            picker, value, index in
+                let token = UserDefaults.standard.string(forKey: TOKEN)
+        
+                AFWrapper.postReportGeneration(ReportStatistic_URL,params: para,token: token!,success: {(model) -> Void in
+                    let serviceCheckIn = model.ServiceCheckIn
+                    let serviceOnTime = model.ServiceDeliveryOnTim
+                    let serviceOverall = model.ServiceOverall
+                    self.pieChartCheckInUpdate(numbers: serviceCheckIn!)
+                    self.pieChartOnTimeUpdate(numbers: serviceOnTime!)
+                    self.serviceBarChartUpdate(numbers: serviceOverall!)
+                    }) {
+                        (error) -> Void in
+                        print(error)
+                    }
+            }
+            func serviceBarChartUpdate (numbers: [Int]) {
+        
+                let entry1 = BarChartDataEntry(x: 1.0, y: Double(numbers[0]))
+                let entry2 = BarChartDataEntry(x: 2.0, y: Double(numbers[1]))
+                let entry3 = BarChartDataEntry(x: 3.0, y: Double(numbers[2]))
+                let entry4 = BarChartDataEntry(x: 4.0, y: Double(numbers[3]))
+        
+                let entry5 = BarChartDataEntry(x: 5.0, y: Double(numbers[4]))
+        
+        
+                let dataSet = BarChartDataSet(values: [entry1, entry2, entry3,entry4, entry5], label: "ServiceOverall")
+                dataSet.colors = ChartColorTemplates.pastel()
+                let data = BarChartData(dataSets: [dataSet])
+        
+                barChart.data = data
+                barChart.chartDescription?.text = "Serive Overall"
+        
+                barChart.xAxis.labelPosition = .bottom
+                //All other additions to this function will go here
+        
+                //This must stay at end of function
+                barChart.notifyDataSetChanged()
+            }
+        
+            func pieChartCheckInUpdate (numbers: [Int]) {
+                let entry1 = PieChartDataEntry(value: Double(numbers[0]), label: "#1")
+                let entry2 = PieChartDataEntry(value: Double(numbers[1]), label: "#2")
+                let entry3 = PieChartDataEntry(value: Double(numbers[2]), label: "#3")
+                let entry4 = PieChartDataEntry(value: Double(numbers[3]), label: "#4")
+                let entry5 = PieChartDataEntry(value: Double(numbers[4]), label: "#5")
+                let dataSet = PieChartDataSet(values: [entry1, entry2, entry3,entry4,entry5], label: "Widget Types")
+                dataSet.colors = ChartColorTemplates.joyful()
+                let data = PieChartData(dataSet: dataSet)
+        
+        
+                pieChart1.data = data
+                pieChart1.chartDescription?.text = "Share of Widgets by Type"
+        
+                //All other additions to this function will go here
+        
+                //This must stay at end of function
+                pieChart1.notifyDataSetChanged()
+            }
+        
+            func pieChartOnTimeUpdate (numbers: [Int]) {
+                let entry1 = PieChartDataEntry(value: Double(numbers[0]), label: "#1")
+                let entry2 = PieChartDataEntry(value: Double(numbers[1]), label: "#2")
+        
+                let dataSet = PieChartDataSet(values: [entry1, entry2], label: "On Time")
+                var colors = [UIColor]()
+                colors.append(UIColor ( red: 0.8185, green: 0.8172, blue: 0.0023, alpha: 1.0 ))
+                colors.append(UIColor ( red: 0.0, green: 0.81, blue: 0.81, alpha: 1.0 ))
+                colors.append(UIColor.green)
+                colors.append(UIColor.gray)
+                colors.append(UIColor.purple)
+                colors.append(UIColor.blue)
+                dataSet.colors = colors
+                
             
-            print("value = \(value)")
-            print("index = \(String(describing: index))")
-            print("picker = \(String(describing: picker))")
-            return
-        }, cancel: { ActionStringCancelBlock in return }, origin: sender)
+                let data = PieChartData(dataSet: dataSet)
+                pieChar2.data = data
+                pieChar2.chartDescription?.text = "Service Delivery on Time"
+                
+                //All other additions to this function will go here
+                
+                //This must stay at end of function
+                pieChar2.notifyDataSetChanged()
+            }
+
+
+
 }
-    
-    @IBAction func dateFromBtnClick(_ sender: UIButton) {
-//        dateChoseView?.showView()
-//        dateChoseView?.pickerDidChange{
-//            (String) in
-//            self.txtDurationFrom.text = String
-//        }
-        
-        let datePicker = ActionSheetDatePicker(title: "Date:", datePickerMode: UIDatePickerMode.date, selectedDate: NSDate() as Date!, doneBlock: {
-                        picker, value, index in
-            
-                        print("value = \(String(describing: value))")
-                        print("index = \(String(describing: index))")
-                        print("picker = \(String(describing: picker))")
-                        return
-                    }, cancel: { ActionStringCancelBlock in return }, origin: sender.superview!.superview)
-                    let secondsInyear: TimeInterval = 365 * 24 * 60 * 60*5;
-                    datePicker?.minimumDate = NSDate(timeInterval: -secondsInyear, since: NSDate() as Date) as Date!
-                    datePicker?.maximumDate = NSDate(timeInterval: secondsInyear, since: NSDate() as Date) as Date!
-                    
-                    datePicker?.show()
 
-
-    }
-    @IBAction func dateToBtnClick(_ sender: UIButton) {
-//        dateChoseView?.showView()
-//        dateChoseView?.pickerDidChange{
-//            (String) in
-//            self.txtDurationTo.text = String
-//    }
-        let datePicker = ActionSheetDatePicker(title: "Date:", datePickerMode: UIDatePickerMode.date, selectedDate: NSDate() as Date!, doneBlock: {
-            picker, value, index in
-            
-            print("value = \(String(describing: value))")
-            print("index = \(String(describing: index))")
-            print("picker = \(String(describing: picker))")
-            return
-        }, cancel: { ActionStringCancelBlock in return }, origin: sender.superview!.superview)
-        let secondsInyear: TimeInterval = 365 * 24 * 60 * 60*5;
-        datePicker?.minimumDate = NSDate(timeInterval: -secondsInyear, since: NSDate() as Date) as Date!
-        datePicker?.maximumDate = NSDate(timeInterval: secondsInyear, since: NSDate() as Date) as Date!
-        
-        datePicker?.show()
-        
-
-    }
-    @IBAction func generateBtnClick(_ sender: Any) {
-         self.performSegue(withIdentifier: "Login2Generate", sender: nil);
-    }
-    
-    private func getDealerIds(){
-        let parameters : Parameters = ["marketId": 1]
-        let token = UserDefaults.standard.string(forKey: TOKEN)
-        
-        AFWrapper.getDealerByMartketId(GetDealerIdByMarketId_URL,params: parameters,token: token!,success: {(dealerIds) -> Void in
-            guard dealerIds != nil  else{
-                //Alert exception
-                return
-            }
-
-            guard ((dealerIds?.count)! > 0) else {
-               //Todo: dealerIds is empty, need to show alert
-                return
-            }
-            
-            for dealer in dealerIds!{
-                self.dealerIdArray.append(dealer.DealerId!)
-            }
-            self.pickerView?.dealerIds = self.dealerIdArray
-
-        }) {
-            (error) -> Void in
-            print(error)
-        }
-
-    }
-}

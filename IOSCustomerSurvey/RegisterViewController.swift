@@ -29,7 +29,7 @@ class RegisterViewController: UIViewController {
     
     private func saveDealerInfo()
     {
-        dealerId = txtDealerId.text
+        dealerId = "6331111"
        
 //        let parameters: Parameters = [
 //            "DealerId": dealerId ?? "",

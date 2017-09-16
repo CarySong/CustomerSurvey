@@ -11,21 +11,22 @@
 		0421EDBC1F6AB5B000267889 /* PartsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421EDBB1F6AB5B000267889 /* PartsModel.swift */; };
 		0421EDBE1F6AC67F00267889 /* CustomerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421EDBD1F6AC67F00267889 /* CustomerModel.swift */; };
 		0421EDC01F6BCE8E00267889 /* GlobalHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421EDBF1F6BCE8E00267889 /* GlobalHelper.swift */; };
+		0421EDC21F6C1E9E00267889 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421EDC11F6C1E9E00267889 /* ServiceModel.swift */; };
 		0476F6A81F62863300B3FD7B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476F6A71F62863300B3FD7B /* PickerView.swift */; };
 		048B6E081F5AABC70070DBE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6E071F5AABC70070DBE6 /* AppDelegate.swift */; };
-		048B6E0A1F5AABC70070DBE6 /* ReportGenerationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6E091F5AABC70070DBE6 /* ReportGenerationViewController.swift */; };
+		048B6E0A1F5AABC70070DBE6 /* ReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6E091F5AABC70070DBE6 /* ReportsViewController.swift */; };
 		048B6E0F1F5AABC70070DBE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048B6E0E1F5AABC70070DBE6 /* Assets.xcassets */; };
 		048B6E121F5AABC70070DBE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048B6E101F5AABC70070DBE6 /* LaunchScreen.storyboard */; };
 		048B6E1D1F5AABC80070DBE6 /* IOSCustomerSurveyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6E1C1F5AABC80070DBE6 /* IOSCustomerSurveyTests.swift */; };
 		048B6E2B1F5B769A0070DBE6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6E2A1F5B769A0070DBE6 /* LoginViewController.swift */; };
 		048B6E2D1F5B76C60070DBE6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6E2C1F5B76C60070DBE6 /* RegisterViewController.swift */; };
 		048B6E2F1F5B76F00070DBE6 /* PartSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6E2E1F5B76F00070DBE6 /* PartSurveyViewController.swift */; };
-		048B6E311F5B77010070DBE6 /* ServiceVeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6E301F5B77010070DBE6 /* ServiceVeyViewController.swift */; };
+		048B6E311F5B77010070DBE6 /* ServiceSurVeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6E301F5B77010070DBE6 /* ServiceSurVeyViewController.swift */; };
 		048B6E651F5D1F110070DBE6 /* AFWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6E641F5D1F110070DBE6 /* AFWrapper.swift */; };
 		04BD1A8A1F5D4BF000711913 /* PostReturnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD1A891F5D4BF000711913 /* PostReturnModel.swift */; };
 		04BD1A8C1F5D6DD500711913 /* IOHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD1A8B1F5D6DD500711913 /* IOHelper.swift */; };
 		04BD1A8E1F5D775F00711913 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD1A8D1F5D775F00711913 /* Constant.swift */; };
-		04BD1ABE1F5F7D9F00711913 /* ReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD1ABD1F5F7D9F00711913 /* ReportsViewController.swift */; };
+		04BD1ABE1F5F7D9F00711913 /* ToGenerareReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD1ABD1F5F7D9F00711913 /* ToGenerareReportsViewController.swift */; };
 		04BD1AC01F5FED8900711913 /* ReportResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD1ABF1F5FED8900711913 /* ReportResultModel.swift */; };
 		04BD1AC21F6014B100711913 /* ReportSearchCriteriaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD1AC11F6014B100711913 /* ReportSearchCriteriaModel.swift */; };
 		04BD1AC51F621CEE00711913 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD1AC41F621CED00711913 /* DatePickerView.swift */; };
@@ -50,10 +51,11 @@
 		0421EDBB1F6AB5B000267889 /* PartsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsModel.swift; sourceTree = "<group>"; };
 		0421EDBD1F6AC67F00267889 /* CustomerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerModel.swift; sourceTree = "<group>"; };
 		0421EDBF1F6BCE8E00267889 /* GlobalHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalHelper.swift; sourceTree = "<group>"; };
+		0421EDC11F6C1E9E00267889 /* ServiceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
 		0476F6A71F62863300B3FD7B /* PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		048B6E041F5AABC70070DBE6 /* IOSCustomerSurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSCustomerSurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048B6E071F5AABC70070DBE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		048B6E091F5AABC70070DBE6 /* ReportGenerationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportGenerationViewController.swift; sourceTree = "<group>"; };
+		048B6E091F5AABC70070DBE6 /* ReportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
 		048B6E0E1F5AABC70070DBE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		048B6E111F5AABC70070DBE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		048B6E131F5AABC70070DBE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,12 +65,12 @@
 		048B6E2A1F5B769A0070DBE6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		048B6E2C1F5B76C60070DBE6 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		048B6E2E1F5B76F00070DBE6 /* PartSurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartSurveyViewController.swift; sourceTree = "<group>"; };
-		048B6E301F5B77010070DBE6 /* ServiceVeyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceVeyViewController.swift; sourceTree = "<group>"; };
+		048B6E301F5B77010070DBE6 /* ServiceSurVeyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceSurVeyViewController.swift; sourceTree = "<group>"; };
 		048B6E641F5D1F110070DBE6 /* AFWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFWrapper.swift; sourceTree = "<group>"; };
 		04BD1A891F5D4BF000711913 /* PostReturnModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostReturnModel.swift; sourceTree = "<group>"; };
 		04BD1A8B1F5D6DD500711913 /* IOHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOHelper.swift; sourceTree = "<group>"; };
 		04BD1A8D1F5D775F00711913 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		04BD1ABD1F5F7D9F00711913 /* ReportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
+		04BD1ABD1F5F7D9F00711913 /* ToGenerareReportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToGenerareReportsViewController.swift; sourceTree = "<group>"; };
 		04BD1ABF1F5FED8900711913 /* ReportResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportResultModel.swift; sourceTree = "<group>"; };
 		04BD1AC11F6014B100711913 /* ReportSearchCriteriaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportSearchCriteriaModel.swift; sourceTree = "<group>"; };
 		04BD1AC41F621CED00711913 /* DatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
@@ -147,12 +149,12 @@
 			isa = PBXGroup;
 			children = (
 				04BD1AC31F621B4000711913 /* Views */,
-				048B6E301F5B77010070DBE6 /* ServiceVeyViewController.swift */,
-				048B6E091F5AABC70070DBE6 /* ReportGenerationViewController.swift */,
-				048B6E2E1F5B76F00070DBE6 /* PartSurveyViewController.swift */,
-				048B6E2C1F5B76C60070DBE6 /* RegisterViewController.swift */,
 				048B6E2A1F5B769A0070DBE6 /* LoginViewController.swift */,
-				04BD1ABD1F5F7D9F00711913 /* ReportsViewController.swift */,
+				048B6E2C1F5B76C60070DBE6 /* RegisterViewController.swift */,
+				048B6E301F5B77010070DBE6 /* ServiceSurVeyViewController.swift */,
+				048B6E2E1F5B76F00070DBE6 /* PartSurveyViewController.swift */,
+				04BD1ABD1F5F7D9F00711913 /* ToGenerareReportsViewController.swift */,
+				048B6E091F5AABC70070DBE6 /* ReportsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -167,6 +169,7 @@
 				0421ED8D1F6A639F00267889 /* DealerIdModel.swift */,
 				0421EDBB1F6AB5B000267889 /* PartsModel.swift */,
 				0421EDBD1F6AC67F00267889 /* CustomerModel.swift */,
+				0421EDC11F6C1E9E00267889 /* ServiceModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -365,14 +368,15 @@
 			files = (
 				048B6E2B1F5B769A0070DBE6 /* LoginViewController.swift in Sources */,
 				04BD1AC51F621CEE00711913 /* DatePickerView.swift in Sources */,
-				048B6E0A1F5AABC70070DBE6 /* ReportGenerationViewController.swift in Sources */,
+				048B6E0A1F5AABC70070DBE6 /* ReportsViewController.swift in Sources */,
 				04CBD2C01F642E720035485D /* RatingControlView.swift in Sources */,
 				048B6E081F5AABC70070DBE6 /* AppDelegate.swift in Sources */,
-				048B6E311F5B77010070DBE6 /* ServiceVeyViewController.swift in Sources */,
+				0421EDC21F6C1E9E00267889 /* ServiceModel.swift in Sources */,
+				048B6E311F5B77010070DBE6 /* ServiceSurVeyViewController.swift in Sources */,
 				0421EDC01F6BCE8E00267889 /* GlobalHelper.swift in Sources */,
 				048B6E2D1F5B76C60070DBE6 /* RegisterViewController.swift in Sources */,
 				048B6E2F1F5B76F00070DBE6 /* PartSurveyViewController.swift in Sources */,
-				04BD1ABE1F5F7D9F00711913 /* ReportsViewController.swift in Sources */,
+				04BD1ABE1F5F7D9F00711913 /* ToGenerareReportsViewController.swift in Sources */,
 				0476F6A81F62863300B3FD7B /* PickerView.swift in Sources */,
 				04BD1AC21F6014B100711913 /* ReportSearchCriteriaModel.swift in Sources */,
 				048B6E651F5D1F110070DBE6 /* AFWrapper.swift in Sources */,

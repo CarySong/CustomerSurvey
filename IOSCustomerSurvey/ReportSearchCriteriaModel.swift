@@ -13,8 +13,8 @@ import HandyJSON
 class ReportSearchCriteriaModel : HandyJSON{
     var DealerId: String?
     var DealerName: String?
-    var DurationFrom: Date?
-    var DurationTo: Date?
+    var DurationFrom: String?
+    var durationTo: String?
     
     required init()
     {    }

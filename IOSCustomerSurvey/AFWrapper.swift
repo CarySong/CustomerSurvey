@@ -31,7 +31,7 @@ class AFWrapper: NSObject {
         }
     }
 
-    class func PostWithToken(_ strURL : String, params : Parameters?,token: String, success:@escaping (ReportResultModel) -> Void, failure:@escaping (Error) -> Void){
+    class func postReportGeneration(_ strURL : String, params : Parameters?,token: String, success:@escaping (ReportResultModel) -> Void, failure:@escaping (Error) -> Void){
         let header : HTTPHeaders = [ "Authorization" : token]
                                      
         Alamofire.request(strURL, method:.post, parameters: params,encoding: JSONEncoding.default,headers:header).responseString{ (response) -> Void in
@@ -95,7 +95,7 @@ class AFWrapper: NSObject {
         }
     }
 
-    class func postUpdateParts(_ strURL : String, params : Parameters?,token: String, success:@escaping (PostReturnModel?) -> Void, failure:@escaping (Error) -> Void){
+    class func postUpdateSurvey(_ strURL : String, params : Parameters?,token: String, success:@escaping (PostReturnModel?) -> Void, failure:@escaping (Error) -> Void){
         let header : HTTPHeaders = [ "Authorization" : token]
         
         Alamofire.request(strURL, method:.post, parameters: params,encoding: JSONEncoding.default,headers:header).responseString{ (response) -> Void in
@@ -110,5 +110,6 @@ class AFWrapper: NSObject {
             }
         }
     }
+    
 
 }

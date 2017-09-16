@@ -23,6 +23,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var titleLabel: UILabel!
     var partRadioButton: DLRadioButton!
     var serviceRadioButton: DLRadioButton!
+    var dealerId : String?
     
     var topConstraint: Constraint? //登录框距顶部距离约束
     
@@ -235,32 +236,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         case "Login2Register":
             os_log("Adding a new meal.", log: OSLog.default, type: .debug)
          
-        case "Login2PartSurvey":
-            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
-        
         case "Login2PartSurveys":
-            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+            guard let partSurveyViewController = segue.destination as? PartSurveyViewController else{
+                fatalError("Unexpected destination:\(segue.destination)")
+            }
+            partSurveyViewController.dealerId = self.dealerId
             
         case "Login2ServiceSurveys":
-            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+            guard let serviceSurveyViewController = segue.destination as? ServiceSurVeyViewController else{
+                                fatalError("Unexpected destination:\(segue.destination)")
+            }
             
-//        case "ShowDetail":
-//            guard let mealDetailViewController = segue.destination as? MealViewController else{
-//                
-//                fatalError("Unexpected destination:\(segue.destination)")
-//            }
-//            
-//            guard let selectedMealCell = sender as? MealTableViewCell else {
-//                fatalError("Unexpected sender:\(sender)")
-//            }
-//            
-//            guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
-//                fatalError("The selected cell is not being displayed by the table")
-//            }
-//            
-//            let selectedMeal = meals[indexPath.row]
-//            
-//            mealDetailViewController.meal = selectedMeal
+            serviceSurveyViewController.dealerId = self.dealerId
+
         default:
             fatalError("Unexpected segue Identifier;\(segue.identifier!)")
         }
@@ -310,11 +298,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.view.layoutIfNeeded()
         })
         
-        let userId = txtUser.text ?? ""
+        self.dealerId = txtUser.text ?? ""
         
         let password = txtPwd.text ?? ""
         
-        guard !userId.isEmpty else {
+        guard !((dealerId?.isEmpty)!) else {
            AlertView_show("Error", message: "The Dealer Id is invalid!")
            txtUser.becomeFirstResponder()
            return
@@ -326,7 +314,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        AFWrapper.Login(Login_URL,userId: userId,password: password,success: {(model) -> Void in
+        AFWrapper.Login(Login_URL,userId: dealerId!,password: password,success: {(model) -> Void in
             
             guard model != nil  else{
             AlertView_show("Error", message: "Please contact support")
@@ -340,11 +328,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 defaults.synchronize()
                 if (self.partRadioButton.isSelected)
                 {
-                    self.performSegue(withIdentifier: "Login2PartSurveys", sender: "DealerID")
+                    self.performSegue(withIdentifier: "Login2PartSurveys", sender: self)
                 }
                 else
                 {
-                    self.performSegue(withIdentifier: "Login2ServiceSurveys", sender: "DealerID")
+                    self.performSegue(withIdentifier: "Login2ServiceSurveys", sender: self)
                 }
                 return
             }
@@ -354,7 +342,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 let defaults = UserDefaults.standard
                 defaults.setValue(model?.Authorization, forKey: TOKEN)
                 defaults.synchronize()
-                self.performSegue(withIdentifier: "Login2Report", sender: "DealerID")
+                self.performSegue(withIdentifier: "Login2Report", sender: self)
                 return
             }
             
@@ -380,7 +368,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func registerClick(){
-        self.performSegue(withIdentifier: "Login2Register", sender: nil);
+        self.performSegue(withIdentifier: "Login2Register", sender: self);
     }
 
  }

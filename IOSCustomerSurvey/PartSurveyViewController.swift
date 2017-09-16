@@ -54,18 +54,24 @@ class PartSurveyViewController: UIViewController {
         
         let token = UserDefaults.standard.string(forKey: TOKEN)
         
-        AFWrapper.postUpdateParts(PostUpdatePartsSurvey,params: para,token: token!,success: {(model) -> Void in
+        AFWrapper.postUpdateSurvey(PostUpdatePartsSurvey,params: para,token: token!,success: {(model) -> Void in
             guard model != nil  else{
             AlertView_show("Error", message: "Please contact support")
             return
             }
             
-            guard model?.StatusCode != "11003" else{
-                //Alert this dealerId is regesterd
-                return
+            let statusCode = model?.StatusCode
+            switch(statusCode!){
+            case "12002":
+                AlertView_show("Info", message: "Thanks for your feedback!")
+                break;
+            case "12003":
+                AlertView_show("Error", message: "Submit faild")
+                break;
+            default:
+                AlertView_show("Error", message: "Failure, Please try again, or contact support team!")
             }
-
-            
+           
         }) {
             (error) -> Void in
             AlertView_show("Error", message: "Network error, please try again")
