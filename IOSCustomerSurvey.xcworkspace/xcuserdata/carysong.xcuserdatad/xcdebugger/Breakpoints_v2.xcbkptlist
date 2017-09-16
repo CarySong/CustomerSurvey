@@ -42,7 +42,7 @@
                   moduleName = "IOSCustomerSurvey"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/carysong/Documents/GitHub/IOSCustomerSurvey/IOSCustomerSurvey/AFWrapper.swift"
-                  timestampString = "527240583.218296"
+                  timestampString = "527250808.029008"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "29"
@@ -57,7 +57,7 @@
                   moduleName = "IOSCustomerSurvey"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/carysong/Documents/GitHub/IOSCustomerSurvey/IOSCustomerSurvey/AFWrapper.swift"
-                  timestampString = "527240583.220482"
+                  timestampString = "527250808.031167"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "29"
@@ -65,166 +65,6 @@
                   offsetFromSymbolStart = "1394">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IOSCustomerSurvey/PartSurveyViewController.swift"
-            timestampString = "527162188.318493"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "submitClick()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IOSCustomerSurvey/AFWrapper.swift"
-            timestampString = "527089959.390654"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "postUpdateSurvey(_:params:token:success:failure:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IOSCustomerSurvey/AFWrapper.swift"
-            timestampString = "527089961.111776"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "postUpdateSurvey(_:params:token:success:failure:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IOSCustomerSurvey/AFWrapper.swift"
-            timestampString = "527089961.595283"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "postUpdateSurvey(_:params:token:success:failure:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IOSCustomerSurvey/AFWrapper.swift"
-            timestampString = "527089962.146878"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "postUpdateSurvey(_:params:token:success:failure:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static IOSCustomerSurvey.AFWrapper.(postUpdateSurvey (Swift.String, params : Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, token : Swift.String, success : (Swift.Optional&lt;IOSCustomerSurvey.PostReturnModel&gt;) -&gt; (), failure : (Swift.Error) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "IOSCustomerSurvey"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/carysong/Documents/GitHub/IOSCustomerSurvey/IOSCustomerSurvey/AFWrapper.swift"
-                  timestampString = "527240583.241974"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "106"
-                  endingLineNumber = "106"
-                  offsetFromSymbolStart = "1007">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static IOSCustomerSurvey.AFWrapper.(postUpdateSurvey (Swift.String, params : Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, token : Swift.String, success : (Swift.Optional&lt;IOSCustomerSurvey.PostReturnModel&gt;) -&gt; (), failure : (Swift.Error) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "IOSCustomerSurvey"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/carysong/Documents/GitHub/IOSCustomerSurvey/IOSCustomerSurvey/AFWrapper.swift"
-                  timestampString = "527240583.243549"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "106"
-                  endingLineNumber = "106"
-                  offsetFromSymbolStart = "1061">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IOSCustomerSurvey/AFWrapper.swift"
-            timestampString = "527089962.674162"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "postUpdateSurvey(_:params:token:success:failure:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IOSCustomerSurvey/LoginViewController.swift"
-            timestampString = "527216786.016339"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "348"
-            endingLineNumber = "348"
-            landmarkName = "loginConfrim()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IOSCustomerSurvey/LoginViewController.swift"
-            timestampString = "527216786.016339"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "355"
-            endingLineNumber = "355"
-            landmarkName = "loginConfrim()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -298,7 +138,7 @@
                   moduleName = "IOSCustomerSurvey"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/carysong/Documents/GitHub/IOSCustomerSurvey/IOSCustomerSurvey/RegisterViewController.swift"
-                  timestampString = "527240583.266236"
+                  timestampString = "527250808.044715"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "132"
@@ -313,7 +153,7 @@
                   moduleName = "IOSCustomerSurvey"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/carysong/Documents/GitHub/IOSCustomerSurvey/IOSCustomerSurvey/RegisterViewController.swift"
-                  timestampString = "527240583.26748"
+                  timestampString = "527250808.046197"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "132"
@@ -321,6 +161,166 @@
                   offsetFromSymbolStart = "12">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOSCustomerSurvey/LoginViewController.swift"
+            timestampString = "527243208.266816"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "textFieldShouldReturn(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOSCustomerSurvey/PartSurveyViewController.swift"
+            timestampString = "527250307.279166"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "submitBtnClick(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOSCustomerSurvey.PartSurveyViewController.submitBtnClick (__ObjC.UIButton) -&gt; ()"
+                  moduleName = "IOSCustomerSurvey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carysong/Documents/GitHub/IOSCustomerSurvey/IOSCustomerSurvey/PartSurveyViewController.swift"
+                  timestampString = "527250808.053017"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "163"
+                  endingLineNumber = "163"
+                  offsetFromSymbolStart = "8381">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOSCustomerSurvey.PartSurveyViewController.(submitBtnClick (__ObjC.UIButton) -&gt; ()).(closure #1)"
+                  moduleName = "IOSCustomerSurvey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carysong/Documents/GitHub/IOSCustomerSurvey/IOSCustomerSurvey/PartSurveyViewController.swift"
+                  timestampString = "527250808.054405"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOSCustomerSurvey/PartSurveyViewController.swift"
+            timestampString = "527250307.279166"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "submitBtnClick(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOSCustomerSurvey/PartSurveyViewController.swift"
+            timestampString = "527250307.279166"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "submitBtnClick(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOSCustomerSurvey.PartSurveyViewController.submitBtnClick (__ObjC.UIButton) -&gt; ()"
+                  moduleName = "IOSCustomerSurvey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carysong/Documents/GitHub/IOSCustomerSurvey/IOSCustomerSurvey/PartSurveyViewController.swift"
+                  timestampString = "527250808.060877"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "41">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOSCustomerSurvey.PartSurveyViewController.(submitBtnClick (__ObjC.UIButton) -&gt; ()).(implicit closure #1)"
+                  moduleName = "IOSCustomerSurvey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carysong/Documents/GitHub/IOSCustomerSurvey/IOSCustomerSurvey/PartSurveyViewController.swift"
+                  timestampString = "527250808.062225"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOSCustomerSurvey/PartSurveyViewController.swift"
+            timestampString = "527250307.279166"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "submitBtnClick(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOSCustomerSurvey/PartSurveyViewController.swift"
+            timestampString = "527250442.058748"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "contactNoFinishEdit(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
