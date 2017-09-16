@@ -13,6 +13,12 @@ import os.log
 class RegisterViewController: UIViewController {
 
     @IBOutlet weak var saveBtn: UIBarButtonItem!
+    
+    @IBOutlet weak var txtAddress: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtDealerName: UITextField!
+    @IBOutlet weak var txtContactNo: UITextField!
     @IBOutlet weak var txtDealerId: UITextField!
     var dealerModel: DealerModel?
     var dealerId : String?
@@ -20,7 +26,9 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dealerIdValidation()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"backgroud.jpeg")!)
+        
+      //  dealerIdValidation()
     }
     
     @IBAction func Cancel(_ sender: UIBarButtonItem) {
@@ -49,6 +57,9 @@ class RegisterViewController: UIViewController {
 
     }
     @IBAction func saveRegisterationInfo(_ sender: Any) {
+       // saveDealerInfo()
+        dealerIdValidation()
+        validateFields()
         saveDealerInfo()
         self.performSegue(withIdentifier: "ToLogin", sender: self)
     }
@@ -87,5 +98,50 @@ class RegisterViewController: UIViewController {
         
     }
 
-   
+    func validateFields(){
+        if txtDealerId.text!.isEmpty{
+            alert(error: "Information", message: "Please input Dealer ID!")
+            
+        }
+        else{
+            //TODO:
+            // Validate the user name exist.
+        }
+        
+        if txtDealerName.text!.isEmpty{
+            alert(error: "Information", message: "Please input Dealer Name!")
+        }
+        
+        if txtContactNo.text!.isEmpty{
+            alert(error: "Information", message: "Please input Contact Number!")
+        }
+        
+        if !validateEmail(email: txtEmail.text!){
+            alert(error: "wrong email address", message: "please input correct email")
+            
+        }
+        
+        if txtPassword.text!.isEmpty{
+            alert(error: "Information", message: "Please input Password!")
+        }
+        if txtAddress.text!.isEmpty{
+            alert(error: "Information", message: "Please input Address!")
+        }
+        
+    }
+    
+    //validate Email
+    func validateEmail (email: String) -> Bool {
+        let regex = "\\w[-\\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\\.)+[A-Za-z]{2,14}"
+        let range = email.range(of: regex, options: .regularExpression)
+        let result = range != nil ? true: false
+        return result
+    }
+    func alert(error: String, message: String){
+        let alert = UIAlertController(title: error, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(ok)
+        self.present(alert, animated: true, completion: nil)
+        // return
+    }
 }
