@@ -13,7 +13,6 @@
 		0476F6A81F62863300B3FD7B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476F6A71F62863300B3FD7B /* PickerView.swift */; };
 		048B6E081F5AABC70070DBE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6E071F5AABC70070DBE6 /* AppDelegate.swift */; };
 		048B6E0A1F5AABC70070DBE6 /* ReportGenerationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6E091F5AABC70070DBE6 /* ReportGenerationViewController.swift */; };
-		048B6E0F1F5AABC70070DBE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048B6E0E1F5AABC70070DBE6 /* Assets.xcassets */; };
 		048B6E121F5AABC70070DBE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048B6E101F5AABC70070DBE6 /* LaunchScreen.storyboard */; };
 		048B6E1D1F5AABC80070DBE6 /* IOSCustomerSurveyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6E1C1F5AABC80070DBE6 /* IOSCustomerSurveyTests.swift */; };
 		048B6E2B1F5B769A0070DBE6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B6E2A1F5B769A0070DBE6 /* LoginViewController.swift */; };
@@ -31,6 +30,7 @@
 		04CBD2C01F642E720035485D /* RatingControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBD2BF1F642E720035485D /* RatingControlView.swift */; };
 		04CBD2C31F6430D90035485D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CBD2C11F6430D90035485D /* Main.storyboard */; };
 		04D8A4D31F68FA94003B5A76 /* DealerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8A4D21F68FA94003B5A76 /* DealerModel.swift */; };
+		6CB7CFBC1F6B8A8E006566A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CB7CFBB1F6B8A8E006566A2 /* Assets.xcassets */; };
 		DD380516E1D2F2901560ABC2 /* Pods_IOSCustomerSurvey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE257F807AEBA68094EB3B4 /* Pods_IOSCustomerSurvey.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +52,6 @@
 		048B6E041F5AABC70070DBE6 /* IOSCustomerSurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSCustomerSurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048B6E071F5AABC70070DBE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		048B6E091F5AABC70070DBE6 /* ReportGenerationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportGenerationViewController.swift; sourceTree = "<group>"; };
-		048B6E0E1F5AABC70070DBE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		048B6E111F5AABC70070DBE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		048B6E131F5AABC70070DBE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		048B6E181F5AABC80070DBE6 /* IOSCustomerSurveyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSCustomerSurveyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +73,7 @@
 		04CBD2C21F6430D90035485D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = IOSCustomerSurvey/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04D8A4D21F68FA94003B5A76 /* DealerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DealerModel.swift; sourceTree = "<group>"; };
 		1EE257F807AEBA68094EB3B4 /* Pods_IOSCustomerSurvey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSCustomerSurvey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CB7CFBB1F6B8A8E006566A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AE113DBF28589EF924203A5 /* Pods-IOSCustomerSurvey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSCustomerSurvey.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSCustomerSurvey/Pods-IOSCustomerSurvey.release.xcconfig"; sourceTree = "<group>"; };
 		DB2EFC4BF162A4E358661AFB /* Pods-IOSCustomerSurvey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSCustomerSurvey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSCustomerSurvey/Pods-IOSCustomerSurvey.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,10 +124,10 @@
 				048B6E331F5B77650070DBE6 /* Models */,
 				048B6E321F5B770C0070DBE6 /* ViewControllers */,
 				048B6E071F5AABC70070DBE6 /* AppDelegate.swift */,
-				048B6E0E1F5AABC70070DBE6 /* Assets.xcassets */,
 				04CBD2C11F6430D90035485D /* Main.storyboard */,
 				048B6E101F5AABC70070DBE6 /* LaunchScreen.storyboard */,
 				048B6E131F5AABC70070DBE6 /* Info.plist */,
+				6CB7CFBB1F6B8A8E006566A2 /* Assets.xcassets */,
 			);
 			path = IOSCustomerSurvey;
 			sourceTree = "<group>";
@@ -293,8 +293,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				04CBD2C31F6430D90035485D /* Main.storyboard in Resources */,
+				6CB7CFBC1F6B8A8E006566A2 /* Assets.xcassets in Resources */,
 				048B6E121F5AABC70070DBE6 /* LaunchScreen.storyboard in Resources */,
-				048B6E0F1F5AABC70070DBE6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +523,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = IOSCustomerSurvey/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.volvo.IOSCustomerSurvey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -536,6 +537,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = IOSCustomerSurvey/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.volvo.IOSCustomerSurvey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
