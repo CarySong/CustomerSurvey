@@ -243,23 +243,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         case "Login2ServiceSurveys":
             os_log("Adding a new meal.", log: OSLog.default, type: .debug)
             
-//        case "ShowDetail":
-//            guard let mealDetailViewController = segue.destination as? MealViewController else{
-//                
-//                fatalError("Unexpected destination:\(segue.destination)")
-//            }
-//            
-//            guard let selectedMealCell = sender as? MealTableViewCell else {
-//                fatalError("Unexpected sender:\(sender)")
-//            }
-//            
-//            guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
-//                fatalError("The selected cell is not being displayed by the table")
-//            }
-//            
-//            let selectedMeal = meals[indexPath.row]
-//            
-//            mealDetailViewController.meal = selectedMeal
+            //        case "ShowDetail":
+            //            guard let mealDetailViewController = segue.destination as? MealViewController else{
+            //
+            //                fatalError("Unexpected destination:\(segue.destination)")
+            //            }
+            //
+            //            guard let selectedMealCell = sender as? MealTableViewCell else {
+            //                fatalError("Unexpected sender:\(sender)")
+            //            }
+            //
+            //            guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
+            //                fatalError("The selected cell is not being displayed by the table")
+            //            }
+            //
+            //            let selectedMeal = meals[indexPath.row]
+            //
+        //            mealDetailViewController.meal = selectedMeal
         default:
             fatalError("Unexpected segue Identifier;\(segue.identifier!)")
         }
@@ -311,55 +311,68 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.view.layoutIfNeeded()
         })
         
-        AFWrapper.Login(Login_URL,userId: "6331",password: "123456",success: {(model) -> Void in
-            print(model?.Authorization! ?? "")
-            guard model != nil  else{
-                //Alert exception
-                return
-            }
-            
-            guard (model?.StatusCode != "10003" ) else {
-                //Todo:    jump to survey
-                let defaults = UserDefaults.standard
-                defaults.setValue(model?.Authorization, forKey: TOKEN)
-                defaults.synchronize()
-                
-                if (self.partRadioButton.isSelected)
-                {
-                    self.performSegue(withIdentifier: "Login2Report", sender: "DealerID")
-                }
-                else
-                {
-                    self.performSegue(withIdentifier: "Login2PartSurvey", sender: "DealerID")
-                }
-
-                return
-            }
-            
-            guard (model?.StatusCode != "10004" ) else {
-                //Todo:    jump to Report
-                let defaults = UserDefaults.standard
-                defaults.setValue(model?.Authorization, forKey: TOKEN)
-                defaults.synchronize()
-                
-
-                return
-            }
-            
-            guard (model?.StatusCode != "10001" ) else {
-                //Todo:    dealer is Invalid  Alert
-                return
-            }
-            
-            guard (model?.StatusCode != "10002" ) else {
-                //Todo:    Password is Invalid  Alert
-                return
-            }
-           
-            }) {
-            (error) -> Void in
-            print(error)
+        if (self.partRadioButton.isSelected)
+        {
+            self.performSegue(withIdentifier: "Login2PartSurvey", sender: "DealerID")
         }
+        else
+        {
+            self.performSegue(withIdentifier: "Login2PartSurveys", sender: "DealerID")
+        }
+        
+        return
+        
+        /*
+         AFWrapper.Login(Login_URL,userId: "6331",password: "123456",success: {(model) -> Void in
+         print(model?.Authorization! ?? "")
+         guard model != nil  else{
+         //Alert exception
+         return
+         }
+         
+         guard (model?.StatusCode != "10003" ) else {
+         //Todo:    jump to survey
+         let defaults = UserDefaults.standard
+         defaults.setValue(model?.Authorization, forKey: TOKEN)
+         defaults.synchronize()
+         
+         if (self.partRadioButton.isSelected)
+         {
+         self.performSegue(withIdentifier: "Login2Report", sender: "DealerID")
+         }
+         else
+         {
+         self.performSegue(withIdentifier: "Login2PartSurvey", sender: "DealerID")
+         }
+         
+         return
+         }
+         
+         guard (model?.StatusCode != "10004" ) else {
+         //Todo:    jump to Report
+         let defaults = UserDefaults.standard
+         defaults.setValue(model?.Authorization, forKey: TOKEN)
+         defaults.synchronize()
+         
+         
+         return
+         }
+         
+         guard (model?.StatusCode != "10001" ) else {
+         //Todo:    dealer is Invalid  Alert
+         return
+         }
+         
+         guard (model?.StatusCode != "10002" ) else {
+         //Todo:    Password is Invalid  Alert
+         return
+         }
+         
+         }) {
+         (error) -> Void in
+         print(error)
+         }
+         */
     }
     
     func registerClick(){
