@@ -10,10 +10,9 @@ import UIKit
 import Alamofire
 import os.log
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var saveBtn: UIBarButtonItem!
-    
     @IBOutlet weak var txtAddress: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
@@ -21,111 +20,155 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var txtContactNo: UITextField!
     @IBOutlet weak var txtDealerId: UITextField!
     var dealerModel: DealerModel?
-    var dealerId : String?
+    var dealerId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = UIColor(patternImage: UIImage(named:"backgroud.jpeg")!)
-        
-      //  dealerIdValidation()
+        self.dealerModel = DealerModel()
     }
     
-    @IBAction func Cancel(_ sender: UIBarButtonItem) {
+    @IBAction func ValidateDealerId(_ sender: Any) {
+        self.dealerId = self.txtDealerId.text?.trimmingCharacters(in: .whitespaces)
+        guard  !(dealerId!.isEmpty)  else {
+            self.txtDealerId.becomeFirstResponder()
+            return
+        }
+        let parameters : Parameters = ["dealerId": dealerId!]
+        let token = UserDefaults.standard.string(forKey: TOKEN)
+        AFWrapper.getDealerValidation(GetDealerIdValidtion,params: parameters, token: token!,success: {(returnModel) -> Void in
+            guard returnModel != nil  else{
+                AlertView_show("Error", message: "Please try again!")
+                self.txtDealerId.becomeFirstResponder()
+                return
+            }
+            guard returnModel!.StatusCode != "11003" else{
+                AlertView_show("Error", message: "This DealerId is regested!")
+                self.txtDealerId.becomeFirstResponder()
+                return
+            }
+            self.txtDealerName.becomeFirstResponder()
+        }) {
+            (error) -> Void in
+            print(error)
+        }
+
+    }
+    
+    @IBAction func dealerNameFinishEdit(_ sender: UITextField) {
+        self.txtContactNo.becomeFirstResponder()
+    }
+    @IBAction func contactFinishEdit(_ sender: UITextField) {
+        self.txtEmail.becomeFirstResponder()
+    }
+    
+    
+    @IBAction func emailFinishEditting(_ sender: UITextField) {
+        guard validateEmail(email: txtEmail.text!) else{
+            alert(error: "wrong email address", message: "please input correct email")
+            txtEmail.becomeFirstResponder()
+            return
+        }
+        txtPassword.becomeFirstResponder()
+    }
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
     
-    private func saveDealerInfo()
-    {
-        dealerId = "6331111"
-       
-//        let parameters: Parameters = [
-//            "DealerId": dealerId ?? "",
-//            "Name": "DealerName",
-//            "ContactNumber": "1522208",
-//            "Email": "cary.song@volvo.com",
-//            "Password":"123456",
-//            "Address": "address"
-//        ]
-//        AFWrapper.dealerRegistration(Registration_URL,params: parameters,success: {(model) -> Void in
-//            print(model)
-//            
-//        }) {
-//            (error) -> Void in
-//            print(error)
-//        }
+    @IBAction func passwordFinishEditing(_ sender: UITextField) {
+        txtPassword.resignFirstResponder()
+        txtAddress.becomeFirstResponder()
+    }
+
+    @IBAction func addressFinishEditing(_ sender: UITextField) {
+        txtAddress.resignFirstResponder()
 
     }
     @IBAction func saveRegisterationInfo(_ sender: Any) {
-       // saveDealerInfo()
-        dealerIdValidation()
         validateFields()
-        saveDealerInfo()
-        self.performSegue(withIdentifier: "ToLogin", sender: self)
-    }
-    
-    
-    //MARK: Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        guard let button = sender as? UIBarButtonItem, button === saveBtn else {
-            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
-            return
-        }
-        dealerId = txtDealerId.text ?? ""
-
-    }
-    
-    private func dealerIdValidation(){
-        let parameters : Parameters = ["dealerId": "633100"]
-        let token = UserDefaults.standard.string(forKey: TOKEN)
+        dealerModel?.DealerId = txtDealerId.text
+        dealerModel?.Name = txtDealerName.text
+        dealerModel?.ContactNumber = txtContactNo.text
+        dealerModel?.Email = txtEmail.text
+        dealerModel?.Password = txtPassword.text
+        dealerModel?.Address = txtAddress.text
         
-        AFWrapper.getDealerValidation(GetDealerIdValidtion,params: parameters,token: token!,success: {(returnModel) -> Void in
-            guard returnModel != nil  else{
-                //Alert exception
+        let para: Parameters = (dealerModel?.toJSON())!
+        AFWrapper.dealerRegistration(Registration_URL,params: para,success: {(model) -> Void in
+            guard model != nil  else{
+                AlertView_show("Error", message: "Please try again!")
+                self.txtDealerId.becomeFirstResponder()
                 return
             }
-            
-            guard returnModel!.StatusCode != "11003" else{
-                //Alert this dealerId is regesterd
-                return
+            let statusCode = model?.StatusCode
+            switch(statusCode!){
+            case "11000":
+                self.performSegue(withIdentifier: "ToLogin", sender: self)
+            case "11002":
+                AlertView_show("Error", message: "Invalid DealerId")
+                
+            case "11003":
+                AlertView_show("Error", message: "Register Faild")
+                
+            default:
+                AlertView_show("Error", message: "Failure, Please try again, or contact support team!")
             }
             
         }) {
             (error) -> Void in
             print(error)
         }
-        
-    }
 
+    }
+    
+    
+    //MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard let button = sender as? UIBarButtonItem, button != saveBtn else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        dealerId = self.txtDealerId.text ?? "0000"
+
+    }
+    
+   
     func validateFields(){
-        if txtDealerId.text!.isEmpty{
+        guard !(txtDealerId.text!.isEmpty) else{
             alert(error: "Information", message: "Please input Dealer ID!")
-            
-        }
-        else{
-            //TODO:
-            // Validate the user name exist.
+            self.txtDealerId.becomeFirstResponder()
+            return
         }
         
-        if txtDealerName.text!.isEmpty{
+        guard  !txtDealerName.text!.isEmpty else{
             alert(error: "Information", message: "Please input Dealer Name!")
+            txtDealerName.becomeFirstResponder()
+            return
         }
         
-        if txtContactNo.text!.isEmpty{
+        guard !txtContactNo.text!.isEmpty else{
             alert(error: "Information", message: "Please input Contact Number!")
+            txtContactNo.becomeFirstResponder()
+            return
         }
         
-        if !validateEmail(email: txtEmail.text!){
+        guard validateEmail(email: txtEmail.text!) else{
             alert(error: "wrong email address", message: "please input correct email")
+            txtEmail.becomeFirstResponder()
+            return
+        }
+        
+        guard !txtPassword.text!.isEmpty else{
+            alert(error: "Information", message: "Please input Password!")
+            txtPassword.becomeFirstResponder()
+            return
             
         }
-        
-        if txtPassword.text!.isEmpty{
-            alert(error: "Information", message: "Please input Password!")
-        }
-        if txtAddress.text!.isEmpty{
+        guard !txtAddress.text!.isEmpty else{
             alert(error: "Information", message: "Please input Address!")
+            txtAddress.becomeFirstResponder()
+        return
         }
         
     }

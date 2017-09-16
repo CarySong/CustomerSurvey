@@ -429,19 +429,25 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dealer Id" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="tgz-Rc-EEQ">
+                                <textField opaque="NO" clipsSubviews="YES" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dealer Id" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="tgz-Rc-EEQ">
                                     <rect key="frame" x="168" y="132" width="226" height="30"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    <connections>
+                                        <action selector="ValidateDealerId:" destination="uT5-LP-G6f" eventType="editingDidEndOnExit" id="d38-Mf-5oG"/>
+                                    </connections>
                                 </textField>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dealer Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="wod-g6-axg">
+                                <textField opaque="NO" clipsSubviews="YES" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dealer Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="wod-g6-axg">
                                     <rect key="frame" x="168" y="170" width="226" height="30"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    <connections>
+                                        <action selector="dealerNameFinishEdit:" destination="uT5-LP-G6f" eventType="editingDidEndOnExit" id="rYx-hX-MUB"/>
+                                    </connections>
                                 </textField>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEALER REGISTRATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OS8-Kh-JIJ">
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEALER REGISTRATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OS8-Kh-JIJ">
                                     <rect key="frame" x="20" y="100" width="374" height="24"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <nil key="textColor"/>
@@ -453,11 +459,14 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contact Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="UX1-NW-4df">
+                                <textField opaque="NO" clipsSubviews="YES" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contact Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="UX1-NW-4df">
                                     <rect key="frame" x="168" y="208" width="226" height="30"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    <connections>
+                                        <action selector="contactFinishEdit:" destination="uT5-LP-G6f" eventType="editingDidEndOnExit" id="0jq-WX-Bu0"/>
+                                    </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eh8-Tt-t3D">
                                     <rect key="frame" x="20" y="211" width="132" height="21"/>
@@ -475,7 +484,10 @@
                                     <rect key="frame" x="168" y="246" width="226" height="30"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    <connections>
+                                        <action selector="emailFinishEditting:" destination="uT5-LP-G6f" eventType="editingDidEndOnExit" id="o9O-1O-Yw8"/>
+                                    </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:         " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Wi-73-Q0U">
                                     <rect key="frame" x="20" y="250" width="86" height="21"/>
@@ -487,13 +499,19 @@
                                     <rect key="frame" x="168" y="284" width="226" height="30"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                    <connections>
+                                        <action selector="passwordFinishEditing:" destination="uT5-LP-G6f" eventType="editingDidEndOnExit" id="oXL-bN-OQN"/>
+                                    </connections>
                                 </textField>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="kOI-eb-dLL">
                                     <rect key="frame" x="168" y="322" width="226" height="30"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    <connections>
+                                        <action selector="addressFinishEditing:" destination="uT5-LP-G6f" eventType="editingDidEndOnExit" id="KKb-cA-I38"/>
+                                    </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:       " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLK-9A-uf7">
                                     <rect key="frame" x="20" y="328" width="99" height="21"/>
@@ -507,7 +525,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbe-hM-dsQ">
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbe-hM-dsQ">
                                     <rect key="frame" x="333" y="360" width="61" height="29"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <state key="normal" title="Register  "/>
@@ -556,7 +574,7 @@
                     <navigationItem key="navigationItem" title="Register" id="eIa-Nr-efM">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="9ze-K5-28U">
                             <connections>
-                                <action selector="Cancel:" destination="uT5-LP-G6f" id="s9W-aX-sba"/>
+                                <action selector="cancel:" destination="uT5-LP-G6f" id="Oof-XT-DbJ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="peS-nT-4tj">
@@ -568,7 +586,7 @@
                     <connections>
                         <outlet property="txtAddress" destination="kOI-eb-dLL" id="CZR-vU-dnN"/>
                         <outlet property="txtContactNo" destination="UX1-NW-4df" id="wvd-9I-Hfy"/>
-                        <outlet property="txtDealerId" destination="wod-g6-axg" id="oBc-PK-5CW"/>
+                        <outlet property="txtDealerId" destination="tgz-Rc-EEQ" id="SMY-Tn-85b"/>
                         <outlet property="txtDealerName" destination="wod-g6-axg" id="48D-JO-nTT"/>
                         <outlet property="txtEmail" destination="MpF-Fp-35C" id="7OJ-so-wKb"/>
                         <outlet property="txtPassword" destination="UaD-PW-lyN" id="BdR-yU-3qa"/>

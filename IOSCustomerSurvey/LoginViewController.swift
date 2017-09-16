@@ -112,7 +112,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.txtPwd.placeholder = "Password"
         self.txtPwd.tag = 101
         self.txtPwd.isSecureTextEntry = true
-        self.txtPwd.isSecureTextEntry = true
         self.txtPwd.leftView = UIView(frame:CGRect(x: 0, y: 0, width: 44, height: 49))
         self.txtPwd.leftViewMode = UITextFieldViewMode.always
         self.txtPwd.returnKeyType = UIReturnKeyType.next

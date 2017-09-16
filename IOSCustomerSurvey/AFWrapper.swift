@@ -47,9 +47,9 @@ class AFWrapper: NSObject {
         }
     }
     
-    class func dealerRegistration(_ strURL : String, params : Parameters?, success:@escaping (PostReturnModel) -> Void, failure:@escaping (Error) -> Void){
+    class func dealerRegistration(_ strURL : String, params : Parameters?, success:@escaping (PostReturnModel?) -> Void, failure:@escaping (Error) -> Void){
         
-        Alamofire.request(strURL, method: .post, parameters: params).responseString{ (response) -> Void in
+        Alamofire.request(strURL, method: .post, parameters: params, encoding: JSONEncoding.default).responseString{ (response) -> Void in
             
             switch(response.result) {
             case .success(_):
