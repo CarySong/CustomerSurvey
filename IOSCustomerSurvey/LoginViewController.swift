@@ -364,6 +364,60 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
             NSLog(error as! String)
         }
+        
+        return
+        
+        /*
+         AFWrapper.Login(Login_URL,userId: "6331",password: "123456",success: {(model) -> Void in
+         print(model?.Authorization! ?? "")
+         guard model != nil  else{
+         //Alert exception
+         return
+         }
+         
+         guard (model?.StatusCode != "10003" ) else {
+         //Todo:    jump to survey
+         let defaults = UserDefaults.standard
+         defaults.setValue(model?.Authorization, forKey: TOKEN)
+         defaults.synchronize()
+         
+         if (self.partRadioButton.isSelected)
+         {
+         self.performSegue(withIdentifier: "Login2Report", sender: "DealerID")
+         }
+         else
+         {
+         self.performSegue(withIdentifier: "Login2PartSurvey", sender: "DealerID")
+         }
+         
+         return
+         }
+         
+         guard (model?.StatusCode != "10004" ) else {
+         //Todo:    jump to Report
+         let defaults = UserDefaults.standard
+         defaults.setValue(model?.Authorization, forKey: TOKEN)
+         defaults.synchronize()
+         
+         
+         return
+         }
+         
+         guard (model?.StatusCode != "10001" ) else {
+         //Todo:    dealer is Invalid  Alert
+         return
+         }
+         
+         guard (model?.StatusCode != "10002" ) else {
+         //Todo:    Password is Invalid  Alert
+         return
+         }
+         
+         }) {
+         (error) -> Void in
+         print(error)
+         }
+         */
     }
     
     func registerClick(){
